@@ -9,7 +9,7 @@ from highway_env.road.road import Road, RoadNetwork
 from highway_env.utils import near_split
 from highway_env.vehicle.controller import ControlledVehicle
 from highway_env.vehicle.kinematics import Vehicle
-
+from highway_env.vehicle.graphics import VehicleGraphics
 Observation = np.ndarray
 
 
@@ -31,11 +31,11 @@ class HighwayEnv(AbstractEnv):
             "action": {
                 "type": "DiscreteMetaAction",
             },
-            "lanes_count": 4,
-            "vehicles_count": 50,
+            "lanes_count": 6,
+            "vehicles_count": 1,
             "controlled_vehicles": 1,
             "initial_lane_id": None,
-            "duration": 40,  # [s]
+            "duration": 60,  # [s]
             "ego_spacing": 2,
             "vehicles_density": 1,
             "collision_reward": -1,    # The reward received when colliding with a vehicle.
@@ -51,6 +51,7 @@ class HighwayEnv(AbstractEnv):
         return config
 
     def _reset(self) -> None:
+        print("THIS IS THE RESET!")
         self._create_road()
         self._create_vehicles()
 
@@ -63,6 +64,19 @@ class HighwayEnv(AbstractEnv):
         """Create some new random vehicles of a given type, and add them on the road."""
         other_vehicles_type = utils.class_from_path(self.config["other_vehicles_type"])
         other_per_controlled = near_split(self.config["vehicles_count"], num_bins=self.config["controlled_vehicles"])
+        emg_vehicle = Vehicle.create_random(
+                self.road,
+                speed=25,
+                lane_id=self.config["initial_lane_id"],
+                spacing=self.config["ego_spacing"]
+            )
+      
+        emg_vehicle = self.action_type.vehicle_class(self.road, emg_vehicle.position, emg_vehicle.heading, emg_vehicle.speed)
+        emg_vehicle.color = VehicleGraphics.EMG_COLOR
+        self.controlled_vehicles.append(emg_vehicle)
+        self.road.vehicles.append(emg_vehicle)
+        #print("EMG COLOR: ", emg_vehicle.)
+
 
         self.controlled_vehicles = []
         for others in other_per_controlled:
