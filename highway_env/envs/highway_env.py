@@ -32,7 +32,7 @@ class HighwayEnv(AbstractEnv):
                 "type": "DiscreteMetaAction",
             },
             "lanes_count": 6,
-            "vehicles_count": 1,
+            "vehicles_count": 0,
             "controlled_vehicles": 1,
             "initial_lane_id": None,
             "duration": 60,  # [s]
