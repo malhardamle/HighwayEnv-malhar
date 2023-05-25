@@ -139,11 +139,11 @@ class KinematicObservation(ObservationType):
 
     """Observe the kinematics of nearby vehicles."""
 
-    FEATURES: List[str] = ['presence', 'x', 'y', 'vx', 'vy']
+    FEATURES: List[str] = ['is_emg','presence', 'x', 'y', 'vx', 'vy']
 
     def __init__(self, env: 'AbstractEnv',
                  features: List[str] = None,
-                 vehicles_count: int = 5,
+                 vehicles_count: int = 2,
                  features_range: Dict[str, List[float]] = None,
                  absolute: bool = False,
                  order: str = "sorted",

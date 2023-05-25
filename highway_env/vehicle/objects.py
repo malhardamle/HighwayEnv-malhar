@@ -22,13 +22,14 @@ class RoadObject(ABC):
     LENGTH: float = 2  # Object length [m]
     WIDTH: float = 2  # Object width [m]
 
-    def __init__(self, road: 'Road', position: Sequence[float], heading: float = 0, speed: float = 0):
+    def __init__(self, road: 'Road', position: Sequence[float], heading: float = 0, speed: float = 0, is_emg: bool = False):
         """
         :param road: the road instance where the object is placed in
         :param position: cartesian position of object in the surface
         :param heading: the angle from positive direction of horizontal axis
         :param speed: cartesian speed of object in the surface
         """
+        self.is_emg = is_emg
         self.road = road
         self.position = np.array(position, dtype=np.float64)
         self.heading = heading
@@ -108,6 +109,7 @@ class RoadObject(ABC):
     # Just added for sake of compatibility
     def to_dict(self, origin_vehicle=None, observe_intentions=True):
         d = {
+            'is emg': self.is_emg,
             'presence': 1,
             'x': self.position[0],
             'y': self.position[1],

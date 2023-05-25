@@ -10,6 +10,7 @@ from highway_env.utils import near_split
 from highway_env.vehicle.controller import ControlledVehicle
 from highway_env.vehicle.kinematics import Vehicle
 from highway_env.vehicle.graphics import VehicleGraphics
+from highway_env.utils import Vector
 Observation = np.ndarray
 
 
@@ -69,15 +70,17 @@ class HighwayEnv(AbstractEnv):
                 speed=25,
                 lane_id=self.config["initial_lane_id"],
                 spacing=self.config["ego_spacing"]
+              
             )
-      
+        emg_vehicle.is_emg = 1
+        print(emg_vehicle.is_emg)
         emg_vehicle = self.action_type.vehicle_class(self.road, emg_vehicle.position, emg_vehicle.heading, emg_vehicle.speed)
         emg_vehicle.color = VehicleGraphics.EMG_COLOR
-        self.controlled_vehicles.append(emg_vehicle)
+        #self.controlled_vehicles.append(emg_vehicle)
         self.road.vehicles.append(emg_vehicle)
         #print("EMG COLOR: ", emg_vehicle.)
 
-
+        #ego vehicleee
         self.controlled_vehicles = []
         for others in other_per_controlled:
             vehicle = Vehicle.create_random(
