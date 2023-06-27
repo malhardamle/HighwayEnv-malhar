@@ -91,7 +91,8 @@ class HighwayEnv(AbstractEnv):
         #self.controlled_vehicles.append(emg_vehicle)
         self.road.vehicles.append(emg_vehicle)
         #print("EMG COLOR: ", emg_vehicle.)
-
+        emg_vehicle.is_emg = 1
+        print(emg_vehicle.is_emg)
         #agent vehicle
         self.controlled_vehicles = []
         for others in other_per_controlled:
