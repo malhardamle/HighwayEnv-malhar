@@ -33,7 +33,7 @@ class HighwayEnv(AbstractEnv):
                 "type": "DiscreteMetaAction",
             },
             "lanes_count": 6,
-            "vehicles_count": 1,
+            "vehicles_count": 0,
             "controlled_vehicles": 1,
             "initial_lane_id": None,
             "duration": 60,  # [s]
@@ -65,22 +65,34 @@ class HighwayEnv(AbstractEnv):
         """Create some new random vehicles of a given type, and add them on the road."""
         other_vehicles_type = utils.class_from_path(self.config["other_vehicles_type"])
         other_per_controlled = near_split(self.config["vehicles_count"], num_bins=self.config["controlled_vehicles"])
+
+        #random traffic vehicle
+        rand_vehicle = Vehicle.create_random(
+                self.road,
+                speed=26,
+                lane_id=self.config["initial_lane_id"],
+                spacing=self.config["ego_spacing"]
+            )
+        rand_vehicle = self.action_type.vehicle_class(self.road, rand_vehicle.position, rand_vehicle.heading, rand_vehicle.speed)
+        rand_vehicle.color = VehicleGraphics.RAND_COLOR
+        self.road.vehicles.append(rand_vehicle)
+
+
+        #emg vehicle
         emg_vehicle = Vehicle.create_random(
                 self.road,
-                speed=25,
+                speed=28,
                 lane_id=self.config["initial_lane_id"],
                 spacing=self.config["ego_spacing"]
               
             )
-        emg_vehicle.is_emg = 1
-        print(emg_vehicle.is_emg)
         emg_vehicle = self.action_type.vehicle_class(self.road, emg_vehicle.position, emg_vehicle.heading, emg_vehicle.speed)
         emg_vehicle.color = VehicleGraphics.EMG_COLOR
         #self.controlled_vehicles.append(emg_vehicle)
         self.road.vehicles.append(emg_vehicle)
         #print("EMG COLOR: ", emg_vehicle.)
 
-        #ego vehicleee
+        #agent vehicle
         self.controlled_vehicles = []
         for others in other_per_controlled:
             vehicle = Vehicle.create_random(

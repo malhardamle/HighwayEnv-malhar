@@ -24,6 +24,7 @@ class VehicleGraphics(object):
     DEFAULT_COLOR = YELLOW
     EGO_COLOR = GREEN
     EMG_COLOR = PURPLE
+    RAND_COLOR = BLUE
     @classmethod
     def display(cls, vehicle: Vehicle, surface: "WorldSurface",
                 transparent: bool = False,
