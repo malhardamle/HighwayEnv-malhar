@@ -76,7 +76,7 @@ class HighwayEnv(AbstractEnv):
         rand_vehicle = self.action_type.vehicle_class(self.road, rand_vehicle.position, rand_vehicle.heading, rand_vehicle.speed)
         rand_vehicle.color = VehicleGraphics.RAND_COLOR
         self.road.vehicles.append(rand_vehicle)
-
+        rand_vehicle.car_id = 2
 
         #emg vehicle
         emg_vehicle = Vehicle.create_random(
@@ -91,8 +91,8 @@ class HighwayEnv(AbstractEnv):
         #self.controlled_vehicles.append(emg_vehicle)
         self.road.vehicles.append(emg_vehicle)
         #print("EMG COLOR: ", emg_vehicle.)
-        emg_vehicle.is_emg = 1
-        print(emg_vehicle.is_emg)
+        emg_vehicle.car_id = 1
+        #print(emg_vehicle.car_id)
         #agent vehicle
         self.controlled_vehicles = []
         for others in other_per_controlled:
