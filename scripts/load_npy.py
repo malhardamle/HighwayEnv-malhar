@@ -1,20 +1,22 @@
 import os
 import numpy as np
 import gymnasium as gym
+import random 
+from highway_env.envs.common.graphics import * 
 
-np.random.seed(1)
+
+
 # Get the current working directory
 current_directory = os.getcwd()
 
 # Specify the file name
-file_name = 'scripts/07_17_23:03.npy'
+time = input("Enter the time stamp:", )
+file_name = 'scripts/07_17_'
+file_name = file_name + time + '.npy'
 
 # Combine the current directory and file name to get the file path
 file_path = os.path.join(current_directory, file_name)
-
-# Print the file path
-print(file_path)
-
+print(file_name)
 
 
 if os.path.exists(file_path):
@@ -47,14 +49,15 @@ env.configure({
     }
 })
 
-obs, info = env.reset(seed = 1) #collect a single episode (replay for later)
-print("OBS: ", obs)
-for d in data:
-   action = d["action"]
-   print("act", action)
-   obs, reward, done, truncated, info = env.step(action)
-   print("obs", obs)
-   obs = env.render()
+# obs, info = env.reset(seed = 1) #collect a single episode (replay for later)
+# print("OBS: ", obs)
+# for d in data:
+#    #action = d["action"]
+# #    action = handle_discrete_action_event()
+#    print("act", action)
+#    obs, reward, done, truncated, info = env.step(action)
+#    print("obs", obs)
+#    obs = env.render()
    
-env.close()
+# env.close()
 

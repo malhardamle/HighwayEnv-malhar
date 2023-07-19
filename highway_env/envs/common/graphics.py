@@ -91,9 +91,11 @@ class EnvViewer(object):
             if event.type == pygame.QUIT:
                 self.env.close()
             self.sim_surface.handle_event(event)
+            
             if self.env.action_type:
-                EventHandler.handle_event(self.env.action_type, event)
-
+                action_val = EventHandler.handle_event(self.env.action_type, event)
+                return action_val
+            print("OUTSIDE HANDLE_EVENTS")
     def display(self) -> None:
         """Display the road and vehicles on a pygame window."""
         if not self.enabled:
@@ -174,22 +176,33 @@ class EventHandler(object):
         :param event: the pygame event
         """
         if isinstance(action_type, DiscreteMetaAction):
-            cls.handle_discrete_action_event(action_type, event)
+            action_val = cls.handle_discrete_action_event(action_type, event)
+            return action_val
         elif action_type.__class__ == ContinuousAction:
             cls.handle_continuous_action_event(action_type, event)
-
+       
     @classmethod
+
+    #records keyboard input and actually moves vehicle
     def handle_discrete_action_event(cls, action_type: DiscreteMetaAction, event: pygame.event.EventType) -> None:
+
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT and action_type.longitudinal:
                 action_type.act(action_type.actions_indexes["FASTER"])
+                return((action_type.actions_indexes["FASTER"]))
             if event.key == pygame.K_LEFT and action_type.longitudinal:
                 action_type.act(action_type.actions_indexes["SLOWER"])
+                return((action_type.actions_indexes["SLOWER"]))
             if event.key == pygame.K_DOWN and action_type.lateral:
                 action_type.act(action_type.actions_indexes["LANE_RIGHT"])
+                return((action_type.actions_indexes["LANE_RIGHT"]))
             if event.key == pygame.K_UP:
                 action_type.act(action_type.actions_indexes["LANE_LEFT"])
-
+                return((action_type.actions_indexes["LANE_LEFT"]))
+        elif not pygame.key.get_pressed():
+            return(1)
+        else:
+            print("nothing")
     @classmethod
     def handle_continuous_action_event(cls, action_type: ContinuousAction, event: pygame.event.EventType) -> None:
         action = action_type.last_action.copy()

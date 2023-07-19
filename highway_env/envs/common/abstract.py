@@ -232,17 +232,18 @@ class AbstractEnv(gym.Env):
             raise NotImplementedError("The road and vehicle must be initialized in the environment implementation")
 
         self.time += 1 / self.config["policy_frequency"]
-        self._simulate(action)
-
+        action_val = self._simulate(action)
+        print("ABSTRACT val:", action_val)
         obs = self.observation_type.observe()
         reward = self._reward(action)
         terminated = self._is_terminated()
         truncated = self._is_truncated()
         info = self._info(obs, action)
+        info.update({"action_val": action_val})
         if self.render_mode == 'human':
             self.render()
 
-        return obs, reward, terminated, truncated, info
+        return obs, reward, terminated, truncated, info, 
 
     def _simulate(self, action: Optional[Action] = None) -> None:
         """Perform several steps of simulation with constant action."""
@@ -261,8 +262,10 @@ class AbstractEnv(gym.Env):
             # Automatically render intermediate simulation steps if a viewer has been launched
             # Ignored if the rendering is done offscreen
             if frame < frames - 1:  # Last frame will be rendered through env.render() as usual
-                self._automatic_rendering()
-
+                action_val = self._automatic_rendering()
+                print("SIMULATE", action_val)
+                return action_val
+            
         self.enable_auto_render = False
 
     def render(self) -> Optional[np.ndarray]:
@@ -287,8 +290,11 @@ class AbstractEnv(gym.Env):
         self.viewer.display()
 
         if not self.viewer.offscreen:
-            self.viewer.handle_events()
+            action_val = self.viewer.handle_events()
+            print("RENDER:", action_val)
+            return action_val
         if self.render_mode == 'rgb_array':
+            print("RGB")
             image = self.viewer.get_image()
             return image
 
@@ -322,8 +328,10 @@ class AbstractEnv(gym.Env):
             if self._record_video_wrapper and self._record_video_wrapper.video_recorder:
                 self._record_video_wrapper.video_recorder.capture_frame()
             else:
-                self.render()
-
+                action_val = self.render()
+                print("AUTOMATIC:", action_val)
+                return action_val
+            
     def simplify(self) -> 'AbstractEnv':
         """
         Return a simplified copy of the environment where distant vehicles have been removed from the road.

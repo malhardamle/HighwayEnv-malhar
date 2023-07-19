@@ -52,7 +52,7 @@ class HighwayEnv(AbstractEnv):
         return config
 
     def _reset(self) -> None:
-        print("THIS IS THE RESET!")
+        #print("THIS IS THE RESET!")
         self._create_road()
         self._create_vehicles()
 
@@ -69,7 +69,7 @@ class HighwayEnv(AbstractEnv):
         #random traffic vehicle
         rand_vehicle = Vehicle.create_random(
                 self.road,
-                speed=26,
+                speed=27,
                 lane_id=self.config["initial_lane_id"],
                 spacing=self.config["ego_spacing"]
             )
@@ -93,6 +93,7 @@ class HighwayEnv(AbstractEnv):
         #print("EMG COLOR: ", emg_vehicle.)
         emg_vehicle.car_id = 1
         #print(emg_vehicle.car_id)
+
         #agent vehicle
         self.controlled_vehicles = []
         for others in other_per_controlled:
