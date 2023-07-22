@@ -6,8 +6,13 @@ import pygame
 from highway_env.envs.common.action import ActionType, DiscreteMetaAction, ContinuousAction
 from highway_env.road.graphics import WorldSurface, RoadGraphics
 from highway_env.vehicle.graphics import VehicleGraphics
-sys.path.append('/HighwayEnv-malhar/scripts')
-from scripts.collect_data import data
+
+
+# Append the directory containing the module to sys.path
+sys.path.insert(1, '/HighwayEnv-malhar/scripts')
+# Now import the 'data' variable from the 'collect_data' module
+from scripts.collect_data import *
+
 
 if TYPE_CHECKING:
     from highway_env.envs import AbstractEnv
