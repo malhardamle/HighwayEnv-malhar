@@ -3,17 +3,16 @@ import numpy as np
 import gymnasium as gym
 import random 
 from highway_env.envs.common.graphics import * 
-
-
+import time
 
 # Get the current working directory
 current_directory = os.getcwd()
 
 # Specify the file name
-time = input("Enter the time stamp:", )
-file_name = 'scripts/07_17_'
-file_name = file_name + time + '.npy'
-
+#time = input("Enter the time stamp:", )
+# file_name = 'scripts/07_17_'
+# file_name = file_name + time + '.npy'
+file_name = 'scripts/training_data/emg_vehicle07_25_19:50.npy'
 # Combine the current directory and file name to get the file path
 file_path = os.path.join(current_directory, file_name)
 print(file_name)
@@ -49,15 +48,19 @@ env.configure({
     }
 })
 
-# obs, info = env.reset(seed = 1) #collect a single episode (replay for later)
+obs, info = env.reset(seed = 1) #collect a single episode (replay for later)
 # print("OBS: ", obs)
-# for d in data:
-#    #action = d["action"]
-# #    action = handle_discrete_action_event()
-#    print("act", action)
-#    obs, reward, done, truncated, info = env.step(action)
-#    print("obs", obs)
-#    obs = env.render()
-   
-# env.close()
+
+
+for d in (data):
+   #action = d["action"]
+#    action = handle_discrete_action_event()
+   print("act", (d['man_act']))
+
+   obs, reward, done, truncated, info = env.step(d['man_act'])
+   print("Obs =", obs, d['obs'])
+   #print("obs", obs)
+   obs = env.render()
+
+env.close()
 

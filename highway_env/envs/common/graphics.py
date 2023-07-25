@@ -9,9 +9,10 @@ from highway_env.vehicle.graphics import VehicleGraphics
 
 
 # Append the directory containing the module to sys.path
-sys.path.insert(1, '/HighwayEnv-malhar/scripts')
+# sys.path.insert(1, '/HighwayEnv-malhar/scripts')
 # Now import the 'data' variable from the 'collect_data' module
-from scripts.collect_data import *
+# from scripts.collect_data import *
+global data
 
 
 if TYPE_CHECKING:
@@ -35,6 +36,7 @@ class EnvViewer(object):
         self.vehicle_trajectory = None
         self.frame = 0
         self.directory = None
+        self.manual_act = 1
 
         pygame.init()
         pygame.display.set_caption("Highway-env")
@@ -94,15 +96,15 @@ class EnvViewer(object):
 
     def handle_events(self) -> None:
         """Handle pygame events by forwarding them to the display and environment vehicle."""
+        self.manual_act = 1
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.env.close()
             self.sim_surface.handle_event(event)
             
             if self.env.action_type:
-                action_val = EventHandler.handle_event(self.env.action_type, event)
-                return action_val
-            print("OUTSIDE HANDLE_EVENTS")
+                self.manual_act = EventHandler.handle_event(self.env.action_type, event)
+
     def display(self) -> None:
         """Display the road and vehicles on a pygame window."""
         if not self.enabled:
@@ -194,26 +196,17 @@ class EventHandler(object):
     def handle_discrete_action_event(cls, action_type: DiscreteMetaAction, event: pygame.event.EventType) -> None:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT and action_type.longitudinal:
-                action_type.act(action_type.actions_indexes["FASTER"])
-                data.append({'action_val',action_type.act(action_type.actions_indexes["FASTER"]) })
                 return((action_type.actions_indexes["FASTER"]))
             if event.key == pygame.K_LEFT and action_type.longitudinal:
                 action_type.act(action_type.actions_indexes["SLOWER"])
-                data.append({'action_val', action_type.act(action_type.actions_indexes["SLOWER"])})
                 return((action_type.actions_indexes["SLOWER"]))
             if event.key == pygame.K_DOWN and action_type.lateral:
                 action_type.act(action_type.actions_indexes["LANE_RIGHT"])
-                data.append({'action_val',action_type.act(action_type.actions_indexes["LANE_RIGHT"]) })
                 return((action_type.actions_indexes["LANE_RIGHT"]))
             if event.key == pygame.K_UP:
                 action_type.act(action_type.actions_indexes["LANE_LEFT"])
-                data.append({'action_val', action_type.act(action_type.actions_indexes["LANE_LEFT"])})
                 return((action_type.actions_indexes["LANE_LEFT"]))
-        elif not pygame.key.get_pressed():
-            data.append({'action_val', 1})
-            return(1)
-        else:
-            print("nothing")
+
     @classmethod
     def handle_continuous_action_event(cls, action_type: ContinuousAction, event: pygame.event.EventType) -> None:
         action = action_type.last_action.copy()

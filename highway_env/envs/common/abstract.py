@@ -233,7 +233,7 @@ class AbstractEnv(gym.Env):
 
         self.time += 1 / self.config["policy_frequency"]
         action_val = self._simulate(action)
-        print("ABSTRACT val:", action_val)
+  
         obs = self.observation_type.observe()
         reward = self._reward(action)
         terminated = self._is_terminated()
@@ -263,7 +263,7 @@ class AbstractEnv(gym.Env):
             # Ignored if the rendering is done offscreen
             if frame < frames - 1:  # Last frame will be rendered through env.render() as usual
                 action_val = self._automatic_rendering()
-                print("SIMULATE", action_val)
+               
                 return action_val
             
         self.enable_auto_render = False
@@ -291,10 +291,10 @@ class AbstractEnv(gym.Env):
 
         if not self.viewer.offscreen:
             action_val = self.viewer.handle_events()
-            print("RENDER:", action_val)
+
             return action_val
         if self.render_mode == 'rgb_array':
-            print("RGB")
+        
             image = self.viewer.get_image()
             return image
 
@@ -329,7 +329,7 @@ class AbstractEnv(gym.Env):
                 self._record_video_wrapper.video_recorder.capture_frame()
             else:
                 action_val = self.render()
-                print("AUTOMATIC:", action_val)
+           
                 return action_val
             
     def simplify(self) -> 'AbstractEnv':
