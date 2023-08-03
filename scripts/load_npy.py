@@ -12,7 +12,7 @@ current_directory = os.getcwd()
 #time = input("Enter the time stamp:", )
 # file_name = 'scripts/07_17_'
 # file_name = file_name + time + '.npy'
-file_name = 'scripts/training_data/emg_vehicle07_25_19:50.npy'
+file_name = 'scripts/training_data/emg_vehicle07_25_19:54.npy'
 # Combine the current directory and file name to get the file path
 file_path = os.path.join(current_directory, file_name)
 print(file_name)

@@ -104,7 +104,7 @@ class EnvViewer(object):
             
             if self.env.action_type:
                 self.manual_act = EventHandler.handle_event(self.env.action_type, event)
-
+        
     def display(self) -> None:
         """Display the road and vehicles on a pygame window."""
         if not self.enabled:

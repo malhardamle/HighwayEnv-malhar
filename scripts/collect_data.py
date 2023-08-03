@@ -42,10 +42,12 @@ while not (done or truncated):
    obs = env.render()
    obs, reward, done, truncated, info = env.step(dummy_action)
    print(env.viewer.manual_act)
+   
    data[-1].update({'man_act': env.viewer.manual_act})
 
-path = "scripts/training_data/emg_vehicle"
-# print(data)
+
+path = "scripts/training_data/emg_vehicle/"
+print(len(data))
 np.save(path + output, data)
 print("-------------------------", end='\n')
 print("Saved to:", path+output)
@@ -54,3 +56,4 @@ env.close()
 
 #command to run (python path)
 # ~/Desktop/HighwayEnv-malhar/.venv/bin/python run_code.py 
+    
