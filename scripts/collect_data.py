@@ -3,11 +3,12 @@ import numpy as np
 from datetime import datetime, time
 import random
 import os
-output = datetime.now().strftime("%m_%d_%H:%M")
-output =  output + ".npy"
+
+seed_num = random.randint(0,1000) #save seed value to replicate it later 
+output =str(seed_num) + ":" + datetime.now().strftime("%m_%d_%H:%M") + ".npy"
 
 
-
+#MAKE AND RUN THE EPISODE
 env = gym.make('highway-v0', render_mode='rgb_array')
 env.configure({
     "manual_control": True,
@@ -25,13 +26,11 @@ env.configure({
         "order": "sorted"
     }
 })
-print(env.config)
-obs, info = env.reset(seed = 1) #collect a single episode (replay for later)
-
+#print(env.config)
+obs, info = env.reset(seed = seed_num) #collect a single episode (replay for later)
 
 #print("Obs:", obs)
 done = truncated = False
-global data 
 data = []
 man_act = []
 reward = 0
@@ -45,12 +44,16 @@ while not (done or truncated):
    
    data[-1].update({'man_act': env.viewer.manual_act})
 
-
-path = "scripts/training_data/emg_vehicle/"
 print(len(data))
-np.save(path + output, data)
+
+cur_path = os.getcwd()
+des = "/training_data/emg_vehicle/"
+save_path = cur_path+des
+
+file = save_path + output
+np.save(file, data)
 print("-------------------------", end='\n')
-print("Saved to:", path+output)
+print("Saved to:", file)
 env.close()
 
 
