@@ -103,8 +103,8 @@ class EnvViewer(object):
             self.sim_surface.handle_event(event)
             
             if self.env.action_type:
-                EventHandler.handle_event(self.env.action_type, event)
-
+                self.manual_act = EventHandler.handle_event(self.env.action_type, event)
+        
     def display(self) -> None:
         """Display the road and vehicles on a pygame window."""
         if not self.enabled:

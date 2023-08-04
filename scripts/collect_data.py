@@ -35,24 +35,25 @@ obs, info = env.reset(seed = seed_num) #collect a single episode (replay for lat
 done = stop_prog = False
 data = []
 reward = 0
-step = 0
+counter = 0
+
 stop_time = time.time() + 10 #run episode for 10 seconds
 
 while not(done or stop_prog):
     if(time.time() > stop_time):
         stop_prog = True
-    step+=1
+    counter+=1
     dummy_action = env.action_space.sample() 
     data.append({'reward': reward, 'obs': obs, 'info': info, 'done':done})
    
     obs = env.render()
     obs, reward, done, truncated, info = env.step(dummy_action)
-    #print(env.viewer.manual_act) #view action value 
+    print(env.viewer.manual_act) #view action value 
     data[-1].update({'man_act': env.viewer.manual_act}) #ADD action value to data dict
 
       
       
-print(len(data), step) #Verify length of data (Should match total steps in that episode )
+print(len(data), counter) #Verify length of data (Should match total steps in that episode )
 
 cur_path = os.getcwd()
 des = "/training_data/emg_vehicle/"
