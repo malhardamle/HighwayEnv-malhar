@@ -1,7 +1,9 @@
 import gymnasium as gym
 import numpy as np 
 from datetime import datetime, time
+import time
 import random
+import cv2
 import os
 
 seed_num = random.randint(0,1000) #save seed value to replicate it later 
@@ -29,22 +31,28 @@ env.configure({
 #print(env.config)
 obs, info = env.reset(seed = seed_num) #collect a single episode (replay for later)
 
-#print("Obs:", obs)
-done = truncated = False
+#Run episode
+done = stop_prog = False
 data = []
-man_act = []
 reward = 0
-while not (done or truncated):
-   dummy_action = env.action_space.sample() 
-   data.append({'reward': reward, 'obs': obs, 'info': info, 'done':done})
-   
-   obs = env.render()
-   obs, reward, done, truncated, info = env.step(dummy_action)
-   print(env.viewer.manual_act)
-   
-   data[-1].update({'man_act': env.viewer.manual_act})
+step = 0
+stop_time = time.time() + 10 #run episode for 10 seconds
 
-print(len(data))
+while not(done or stop_prog):
+    if(time.time() > stop_time):
+        stop_prog = True
+    step+=1
+    dummy_action = env.action_space.sample() 
+    data.append({'reward': reward, 'obs': obs, 'info': info, 'done':done})
+   
+    obs = env.render()
+    obs, reward, done, truncated, info = env.step(dummy_action)
+    #print(env.viewer.manual_act) #view action value 
+    data[-1].update({'man_act': env.viewer.manual_act}) #ADD action value to data dict
+
+      
+      
+print(len(data), step) #Verify length of data (Should match total steps in that episode )
 
 cur_path = os.getcwd()
 des = "/training_data/emg_vehicle/"

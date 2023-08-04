@@ -103,8 +103,8 @@ class EnvViewer(object):
             self.sim_surface.handle_event(event)
             
             if self.env.action_type:
-                self.manual_act = EventHandler.handle_event(self.env.action_type, event)
-        
+                EventHandler.handle_event(self.env.action_type, event)
+
     def display(self) -> None:
         """Display the road and vehicles on a pygame window."""
         if not self.enabled:
@@ -186,7 +186,7 @@ class EventHandler(object):
         """
         if isinstance(action_type, DiscreteMetaAction):
             action_val = cls.handle_discrete_action_event(action_type, event)
-            return action_val
+            #return action_val
         elif action_type.__class__ == ContinuousAction:
             cls.handle_continuous_action_event(action_type, event)
        
