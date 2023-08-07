@@ -1,13 +1,16 @@
 import gymnasium as gym
 import numpy as np 
 from datetime import datetime, time
+import time
 import random
+import cv2
 import os
-output = datetime.now().strftime("%m_%d_%H:%M")
-output =  output + ".npy"
+
+seed_num = random.randint(0,1000) #save seed value to replicate it later 
+output =str(seed_num) + ":" + datetime.now().strftime("%m_%d_%H:%M") + ".npy"
 
 
-
+#MAKE AND RUN THE EPISODE
 env = gym.make('highway-v0', render_mode='rgb_array')
 env.configure({
     "manual_control": True,
@@ -25,32 +28,41 @@ env.configure({
         "order": "sorted"
     }
 })
-print(env.config)
-obs, info = env.reset(seed = 1) #collect a single episode (replay for later)
+#print(env.config)
+obs, info = env.reset(seed = seed_num) #collect a single episode (replay for later)
 
-
-#print("Obs:", obs)
-done = truncated = False
-global data 
+#Run episode
+done = stop_prog = False
 data = []
-man_act = []
 reward = 0
-while not (done or truncated):
-   dummy_action = env.action_space.sample() 
-   data.append({'reward': reward, 'obs': obs, 'info': info, 'done':done})
-   
-   obs = env.render()
-   obs, reward, done, truncated, info = env.step(dummy_action)
-   print(env.viewer.manual_act)
-   
-   data[-1].update({'man_act': env.viewer.manual_act})
+counter = 0
 
+stop_time = time.time() + 10 #run episode for 10 seconds
 
-path = "scripts/training_data/emg_vehicle/"
-print(len(data))
-np.save(path + output, data)
+while not(done or stop_prog):
+    if(time.time() > stop_time):
+        stop_prog = True
+    counter+=1
+    dummy_action = env.action_space.sample() 
+    data.append({'reward': reward, 'obs': obs, 'info': info, 'done':done})
+   
+    obs = env.render()
+    obs, reward, done, truncated, info = env.step(dummy_action)
+    print(env.viewer.manual_act) #view action value 
+    data[-1].update({'man_act': env.viewer.manual_act}) #ADD action value to data dict
+
+      
+      
+print(len(data), counter) #Verify length of data (Should match total steps in that episode )
+
+cur_path = os.getcwd()
+des = "/training_data/emg_vehicle/"
+save_path = cur_path+des
+
+file = save_path + output
+np.save(file, data)
 print("-------------------------", end='\n')
-print("Saved to:", path+output)
+print("Saved to:", file)
 env.close()
 
 

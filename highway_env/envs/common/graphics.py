@@ -186,7 +186,7 @@ class EventHandler(object):
         """
         if isinstance(action_type, DiscreteMetaAction):
             action_val = cls.handle_discrete_action_event(action_type, event)
-            return action_val
+            #return action_val
         elif action_type.__class__ == ContinuousAction:
             cls.handle_continuous_action_event(action_type, event)
        
