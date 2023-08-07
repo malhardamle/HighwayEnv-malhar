@@ -7,13 +7,7 @@ from highway_env.envs.common.action import ActionType, DiscreteMetaAction, Conti
 from highway_env.road.graphics import WorldSurface, RoadGraphics
 from highway_env.vehicle.graphics import VehicleGraphics
 
-
-# Append the directory containing the module to sys.path
-# sys.path.insert(1, '/HighwayEnv-malhar/scripts')
-# Now import the 'data' variable from the 'collect_data' module
-# from scripts.collect_data import *
-global data
-
+from pynput import keyboard
 
 if TYPE_CHECKING:
     from highway_env.envs import AbstractEnv
@@ -189,24 +183,41 @@ class EventHandler(object):
             #return action_val
         elif action_type.__class__ == ContinuousAction:
             cls.handle_continuous_action_event(action_type, event)
-       
+            
     @classmethod
 
     #records keyboard input and actually moves vehicle
     def handle_discrete_action_event(cls, action_type: DiscreteMetaAction, event: pygame.event.EventType) -> None:
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT and action_type.longitudinal:
-                return((action_type.actions_indexes["FASTER"]))
-            if event.key == pygame.K_LEFT and action_type.longitudinal:
-                action_type.act(action_type.actions_indexes["SLOWER"])
-                return((action_type.actions_indexes["SLOWER"]))
-            if event.key == pygame.K_DOWN and action_type.lateral:
-                action_type.act(action_type.actions_indexes["LANE_RIGHT"])
-                return((action_type.actions_indexes["LANE_RIGHT"]))
-            if event.key == pygame.K_UP:
-                action_type.act(action_type.actions_indexes["LANE_LEFT"])
-                return((action_type.actions_indexes["LANE_LEFT"]))
+        while True:
+            key = input()
+            if key == 'q':
+                break
+            elif key == '\x1b[A':
+                recorded_actions.append(ACTIONS_ALL[3])
+            elif key == '\x1b[B':
+                recorded_actions.append(ACTIONS_ALL[4])
+            elif key == '\x1b[C':
+                recorded_actions.append(ACTIONS_ALL[2])
+            elif key == '\x1b[D':
+                recorded_actions.append(ACTIONS_ALL[0])
 
+              
+        # if event.type == pygame.KEYDOWN:
+        #     if event.key == pygame.K_RIGHT and action_type.longitudinal:
+        #         return((action_type.actions_indexes["FASTER"]))
+        #     if event.key == pygame.K_LEFT and action_type.longitudinal:
+        #         action_type.act(action_type.actions_indexes["SLOWER"])
+        #         return((action_type.actions_indexes["SLOWER"]))
+        #     if event.key == pygame.K_DOWN and action_type.lateral:
+        #         action_type.act(action_type.actions_indexes["LANE_RIGHT"])
+        #         return((action_type.actions_indexes["LANE_RIGHT"]))
+        #     if event.key == pygame.K_UP:
+        #         action_type.act(action_type.actions_indexes["LANE_LEFT"])
+        #         return((action_type.actions_indexes["LANE_LEFT"]))
+     
+        # print("Keyboard Error")
+        # return 1
+    
     @classmethod
     def handle_continuous_action_event(cls, action_type: ContinuousAction, event: pygame.event.EventType) -> None:
         action = action_type.last_action.copy()
