@@ -239,11 +239,11 @@ class AbstractEnv(gym.Env):
         terminated = self._is_terminated()
         truncated = self._is_truncated()
         info = self._info(obs, action)
-        info.update({"action_val": action_val})
+       # info.update({"action_val": action_val})
         if self.render_mode == 'human':
             self.render()
 
-        return obs, reward, terminated, truncated, info, 
+        return obs, reward, terminated, truncated, info 
 
     def _simulate(self, action: Optional[Action] = None) -> None:
         """Perform several steps of simulation with constant action."""
