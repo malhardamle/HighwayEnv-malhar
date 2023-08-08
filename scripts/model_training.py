@@ -20,7 +20,7 @@ def load_files(file_path):
             f+=1
             data = np.load(os.path.join(file_path, x), allow_pickle=True)
             obs_data.extend([d['obs'] for d in data])
-            action_data.extend([print(d['man_act']) for d in data])
+            action_data.extend([(d['man_act']) for d in data])
         
     print(len(obs_data), len(action_data), f)
     return obs_data, action_data
