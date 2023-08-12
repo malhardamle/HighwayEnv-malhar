@@ -7,60 +7,79 @@ import sys
 import os 
 from sklearn.ensemble import RandomForestClassifier
 import gymnasium as gym
-
-
 import glob
+
 
 def load_files(file_path):
     obs_data = []
     action_data = []
-    # assert len(obs_data.shape) == 2
-    # assert len(action_data.shape) == 1
+   
     f = 0
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
             f+=1
-            file = file_path + x
-            print(x)
-            data = np.load(file, allow_pickle=True)
-            print(data)
-            #obs_data.append(data)
-            #for d in data:
+            data = np.load(os.path.join(file_path, x), allow_pickle=True)
+            obs_data.extend([d['obs'] for d in data])
+            action_data.extend([(d['man_act']) for d in data])
+        
+    print(len(obs_data), len(action_data), f)
+    return obs_data, action_data
 
-                #print(d['obs']) load each step of obs data into 
-                #print(d['man_act'])
-    #print(len(obs_data), f)
+def clean_model_input(obs_data, action_data):
 
-def main():
-    cwd = os.getcwd()
-    cwd = cwd + "/training_data/"
-    load_files(cwd)
+     # Convert observation data to a 2D array
+    obs_data = np.array(obs_data) #b, 3,6
+    batch = obs_data.shape[0] #b 
+    # Convert action data to a 1D array
+    action_data = np.array(action_data)
 
-if __name__ == '__main__':
-    main()
+    obs_data = obs_data.reshape((batch, -1)) #b *18
 
 
-
-def trainer():
-    #get valid obs #'s (files / other method)
-
-
-    #go through 15/ 20 training files
-    #for each file in total files
-        # obs, action = load_files()
+    return obs_data, action_data
+    
+def trainer(obs, action):
+    assert obs.shape[0] == action.shape[0]
+    assert len(obs.shape) == 2
+    assert len(action.shape) == 1
     final_model = RandomForestClassifier(n_estimators=100) #train model 
-    final_model.fit(obs_data,action)
+    final_model.fit(obs,action)
     return final_model
 
+def important_features(model):
+     # Extract important features from the model
+    importances = model.feature_importances_
 
-# final_model = trainer() #get a new instance of trained_model
+    # Map features to their importance scores
+    feature_importance_mapping = {
+        f"Feature_{i+1}": importance for i, importance in enumerate(importances)
+    }
+
+    # Print the important features in descending order of importance
+    sorted_features = sorted(feature_importance_mapping.items(), key=lambda x: x[1], reverse=True)
+    print("Important Features:")
+    for feature, importance in sorted_features:
+        print(f"{feature}: {importance:.4f}")
+
+if __name__ == '__main__':
+    cwd = os.getcwd()
+    cwd = cwd + "/training_data/emg_vehicle/"
+    obs_data, action_data = load_files(cwd)
+    obs_data, action_data = clean_model_input(obs_data, action_data)
+
+    model = trainer(obs_data, action_data)  #train model based on obs and action val data
+    print("Trained Model: ", model) #print weights of model
+    important_features(model) #extract and print important features of model 
+   
+    
+
 
 def predict(final_model, obs):
     predict_action = final_model.predict(obs)
     return predict_action
 
 
-def test_env():
+def test_env(model):
     env = gym.make('highway-v0', render_mode='rgb_array')
     env.configure({
         "manual_control": False,
@@ -79,10 +98,10 @@ def test_env():
         }
     })
 
-   # action = predict(final_model, obs)
-    # print("act", action)
-    # obs, reward, done, truncated, info = env.step(action)
-    # print("obs", obs)
-    # obs = env.render()
+    action = predict(model, obs)
+    print("act", action)
+    obs, reward, done, truncated, info = env.step(action)
+    print("obs", obs)
+    obs = env.render()
 
-    # env.close()
+    env.close()

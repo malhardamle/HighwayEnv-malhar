@@ -48,6 +48,7 @@ while not(done or stop_prog):
    
     obs = env.render()
     obs, reward, done, truncated, info = env.step(dummy_action)
+    print(obs)
     print(env.viewer.manual_act) #view action value 
     data[-1].update({'man_act': env.viewer.manual_act}) #ADD action value to data dict
 
