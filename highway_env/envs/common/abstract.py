@@ -269,6 +269,9 @@ class AbstractEnv(gym.Env):
         self.enable_auto_render = False
 
     def render(self) -> Optional[np.ndarray]:
+        
+       
+
         """
         Render the environment.
 
@@ -290,13 +293,11 @@ class AbstractEnv(gym.Env):
         self.viewer.display()
 
         if not self.viewer.offscreen:
-            action_val = self.viewer.handle_events()
-
-            return action_val
+            act_val = self.viewer.handle_events()
+            print("abstract:", act_val)
         if self.render_mode == 'rgb_array':
-        
             image = self.viewer.get_image()
-            return image
+            return image,act_val
 
     def close(self) -> None:
         """

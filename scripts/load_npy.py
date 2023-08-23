@@ -6,16 +6,19 @@ from highway_env.envs.common.graphics import *
 import time
 
 # Get the current working directory
-current_directory = os.getcwd()
 
+dest = os.getcwd() + "/training_data/emg_vehicle/"
 # Specify the file name
 #time = input("Enter the time stamp:", )
 # file_name = 'scripts/07_17_'
 # file_name = file_name + time + '.npy'
-file_name = 'scripts/training_data/emg_vehicle07_25_19:54.npy'
+# file_name = 'scripts/training_data/emg_vehicle07_25_19:54.npy'
+file =  input()
+seedNum = file.split(":")
+seedNum = int(seedNum[0])
 # Combine the current directory and file name to get the file path
-file_path = os.path.join(current_directory, file_name)
-print(file_name)
+file_path = os.path.join(dest, file)
+print(seedNum, file_path)
 
 
 if os.path.exists(file_path):
@@ -28,8 +31,6 @@ else:
 data = np.load(file_path, allow_pickle=True)
 
 # Use the data as needed
-
-
 env = gym.make('highway-v0', render_mode='rgb_array')
 env.configure({
     "manual_control": False,
@@ -48,17 +49,15 @@ env.configure({
     }
 })
 
-obs, info = env.reset(seed = 1) #collect a single episode (replay for later)
+obs, info = env.reset(seed = seedNum) #collect a single episode (replay for later)
 # print("OBS: ", obs)
-
-
 for d in (data):
    #action = d["action"]
 #    action = handle_discrete_action_event()
-   print("act", (d['man_act']))
-
+   if(d['man_act']!= 1):
+    print("act", (d['man_act']))
    obs, reward, done, truncated, info = env.step(d['man_act'])
-   print("Obs =", obs, d['obs'])
+   #print("Obs =", obs, d['obs'])
    #print("obs", obs)
    obs = env.render()
 

@@ -7,7 +7,7 @@ from highway_env.envs.common.action import ActionType, DiscreteMetaAction, Conti
 from highway_env.road.graphics import WorldSurface, RoadGraphics
 from highway_env.vehicle.graphics import VehicleGraphics
 
-from pynput import keyboard
+keystroke = []
 
 if TYPE_CHECKING:
     from highway_env.envs import AbstractEnv
@@ -90,6 +90,7 @@ class EnvViewer(object):
 
     def handle_events(self) -> None:
         """Handle pygame events by forwarding them to the display and environment vehicle."""
+        act_val = 1
         self.manual_act = 1
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -97,8 +98,9 @@ class EnvViewer(object):
             self.sim_surface.handle_event(event)
             
             if self.env.action_type:
-                self.manual_act = EventHandler.handle_event(self.env.action_type, event)
-        
+                act_val = EventHandler.handle_event(self.env.action_type, event)
+                print("handle_events:", act_val)
+        return act_val
     def display(self) -> None:
         """Display the road and vehicles on a pygame window."""
         if not self.enabled:
@@ -172,37 +174,56 @@ class EnvViewer(object):
 class EventHandler(object):
     @classmethod
     def handle_event(cls, action_type: ActionType, event: pygame.event.EventType) -> None:
+        
         """
         Map the pygame keyboard events to control decisions
 
         :param action_type: the ActionType that defines how the vehicle is controlled
         :param event: the pygame event
         """
+        #print(action_type, event)
         if isinstance(action_type, DiscreteMetaAction):
+            print("got a discrete event")
             action_val = cls.handle_discrete_action_event(action_type, event)
-            #return action_val
         elif action_type.__class__ == ContinuousAction:
             cls.handle_continuous_action_event(action_type, event)
-            
+        print("handle_event:", action_val)
+        return action_val
     @classmethod
 
     #records keyboard input and actually moves vehicle
     def handle_discrete_action_event(cls, action_type: DiscreteMetaAction, event: pygame.event.EventType) -> None:  
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT and action_type.longitudinal:
-                return((action_type.actions_indexes["FASTER"]))
+                action_type.act((action_type.actions_indexes["FASTER"]))
             if event.key == pygame.K_LEFT and action_type.longitudinal:
                 action_type.act(action_type.actions_indexes["SLOWER"])
-                return((action_type.actions_indexes["SLOWER"]))
             if event.key == pygame.K_DOWN and action_type.lateral:
                 action_type.act(action_type.actions_indexes["LANE_RIGHT"])
-                return((action_type.actions_indexes["LANE_RIGHT"]))
             if event.key == pygame.K_UP:
                 action_type.act(action_type.actions_indexes["LANE_LEFT"])
-                return((action_type.actions_indexes["LANE_LEFT"]))
-     
-        print("Keyboard Error")
-        return 1
+
+            if event.key == pygame.K_RIGHT:
+                keystroke.append(3)
+                return 3
+            elif event.key == pygame.K_UP:
+                keystroke.append(0)
+                return 0
+            elif event.key == pygame.K_DOWN:
+                keystroke.append(2)
+                return 2
+            elif event.key == pygame.K_LEFT:
+                keystroke.append(4)
+                return 4
+            else:
+                keystroke.append(1)
+                return 1
+        else:
+            print("key not down")
+            keystroke.append(1)
+            return 1
+    
+
     
     @classmethod
     def handle_continuous_action_event(cls, action_type: ContinuousAction, event: pygame.event.EventType) -> None:
