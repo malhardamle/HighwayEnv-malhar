@@ -294,7 +294,7 @@ class AbstractEnv(gym.Env):
 
         if not self.viewer.offscreen:
             act_val = self.viewer.handle_events()
-            print("abstract:", act_val)
+            #print("abstract:", act_val)
         if self.render_mode == 'rgb_array':
             image = self.viewer.get_image()
             return image,act_val

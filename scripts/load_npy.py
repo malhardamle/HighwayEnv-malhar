@@ -1,11 +1,15 @@
-import os
-import numpy as np
-import gymnasium as gym
-import random 
-from highway_env.envs.common.graphics import * 
-import time
 
-# Get the current working directory
+import gymnasium as gym
+import numpy as np 
+from datetime import datetime, time
+import random, pygame
+import cv2
+import os
+
+from highway_env.envs.common import graphics 
+from highway_env.envs.common import abstract
+
+
 
 dest = os.getcwd() + "/training_data/emg_vehicle/"
 # Specify the file name
@@ -30,7 +34,7 @@ else:
 # Load the NumPy file
 data = np.load(file_path, allow_pickle=True)
 
-# Use the data as needed
+#MAKE AND RUN THE EPISODE
 env = gym.make('highway-v0', render_mode='rgb_array')
 env.configure({
     "manual_control": False,
@@ -48,18 +52,19 @@ env.configure({
         "order": "sorted"
     }
 })
-
-obs, info = env.reset(seed = seedNum) #collect a single episode (replay for later)
-# print("OBS: ", obs)
-for d in (data):
-   #action = d["action"]
-#    action = handle_discrete_action_event()
-   if(d['man_act']!= 1):
-    print("act", (d['man_act']))
-   obs, reward, done, truncated, info = env.step(d['man_act'])
+#print(env.config)
+obs, info = env.reset() #collect a single episode (replay for later)
+check = 0
+done = False
+while check < len(data) and done is False:
+   val = 0
+   for d in data:
+    val = np.int64(d['man_act'])
+   auto = env.action_space.sample()
+   print(val)
+   obs, reward, done, truncated, info = env.step(val)
    #print("Obs =", obs, d['obs'])
    #print("obs", obs)
-   obs = env.render()
-
+   obs,val = env.render()
+   check +=1
 env.close()
-
