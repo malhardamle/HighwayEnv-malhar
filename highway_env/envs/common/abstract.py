@@ -18,6 +18,9 @@ from highway_env.vehicle.kinematics import Vehicle
 
 Observation = TypeVar("Observation")
 
+acount = 0
+from datetime import datetime, time
+
 
 class AbstractEnv(gym.Env):
 
@@ -217,8 +220,11 @@ class AbstractEnv(gym.Env):
         This method must be overloaded by the environments.
         """
         raise NotImplementedError()
-
+    
+# ADD the action value to the TXT FILE HERE
     def step(self, action: Action) -> Tuple[Observation, float, bool, bool, dict]:
+        global acount 
+        acount += 1
         """
         Perform an action and step the environment dynamics.
 
@@ -232,20 +238,24 @@ class AbstractEnv(gym.Env):
             raise NotImplementedError("The road and vehicle must be initialized in the environment implementation")
 
         self.time += 1 / self.config["policy_frequency"]
-        action_val = self._simulate(action)
-  
+        act_val = self._simulate(action)
+        #if(act_val != None):
+            #print("STEP ACTION VALUE:", act_val)
+            #print("______________________")
+      
         obs = self.observation_type.observe()
         reward = self._reward(action)
         terminated = self._is_terminated()
         truncated = self._is_truncated()
         info = self._info(obs, action)
-       # info.update({"action_val": action_val})
+       
         if self.render_mode == 'human':
             self.render()
 
         return obs, reward, terminated, truncated, info 
 
     def _simulate(self, action: Optional[Action] = None) -> None:
+        #action_val = None
         """Perform several steps of simulation with constant action."""
         frames = int(self.config["simulation_frequency"] // self.config["policy_frequency"])
         for frame in range(frames):
@@ -263,12 +273,16 @@ class AbstractEnv(gym.Env):
             # Ignored if the rendering is done offscreen
             if frame < frames - 1:  # Last frame will be rendered through env.render() as usual
                 action_val = self._automatic_rendering()
-               
+                #if(action_val !=None):
+                    #print("SIMULATE VALUE:", action_val)
                 return action_val
             
         self.enable_auto_render = False
 
-    def render(self) -> Optional[np.ndarray]:
+    def render(self) -> Optional[np.ndarray]:  
+        act_val = None
+        off = False
+        check = False
         """
         Render the environment.
 
@@ -290,14 +304,28 @@ class AbstractEnv(gym.Env):
         self.viewer.display()
 
         if not self.viewer.offscreen:
-            action_val = self.viewer.handle_events()
-
-            return action_val
+            #print ("In off screen in render()")
+            off = True
+            act_val = self.viewer.handle_events()
+            #print(act_val)
         if self.render_mode == 'rgb_array':
-        
+            check = True
             image = self.viewer.get_image()
-            return image
+        
+        # if act_val !=None: 
+        #     print("render():", act_val)
+        #     #keystroke.append(act_val)
+        # elif act_val == None:
+        #     #keystroke.append(1)
+        if act_val != None: print ("Render ():", act_val)
+        if act_val == None: act_val = 1
+        if check: return image, act_val
+        else: image = np.empty((2, 2))
+        return image, act_val
+        
+       
 
+        
     def close(self) -> None:
         """
         Close the environment.
@@ -317,6 +345,7 @@ class AbstractEnv(gym.Env):
         self.update_metadata()
 
     def _automatic_rendering(self) -> None:
+        action_val = None
         """
         Automatically render the intermediate frames while an action is still ongoing.
 
@@ -328,9 +357,14 @@ class AbstractEnv(gym.Env):
             if self._record_video_wrapper and self._record_video_wrapper.video_recorder:
                 self._record_video_wrapper.video_recorder.capture_frame()
             else:
-                action_val = self.render()
-           
-                return action_val
+                #print("AUTO render call")
+                img, action_val = self.render()
+                #if(action_val !=None):
+                    #print("AUTO RENDER VALUE:", action_val)
+                    #f.write(str(action_val) + '\n')
+                # else:
+                #     f.write("1" + "\n")
+        return action_val
             
     def simplify(self) -> 'AbstractEnv':
         """

@@ -1,38 +1,37 @@
-from pynput import keyboard
+import pygame
+import time, sys
+sys.path.append("/Users/malhardamle/Desktop/HighwayEnv-malhar/highway_env/envs/common")
 
-# Define the actions dictionary
-ACTIONS_ALL = {
-    0: 'LANE_LEFT',
-    1: 'IDLE',
-    2: 'LANE_RIGHT',
-    3: 'FASTER',
-    4: 'SLOWER'
-}
+from highway_env.envs.common import test2
 
-recorded_actions = []
 
-def on_press(key):
-    try:
-        if key.char == 'q':
-            return False  # Stop the listener when 'q' is pressed
+print(test2.var)
 
-    except AttributeError:
-        if key == keyboard.Key.up:
-            recorded_actions.append(ACTIONS_ALL[3])
-        elif key == keyboard.Key.down:
-            recorded_actions.append(ACTIONS_ALL[4])
-        elif key == keyboard.Key.left:
-            recorded_actions.append(ACTIONS_ALL[0])
-        elif key == keyboard.Key.right:
-            recorded_actions.append(ACTIONS_ALL[2])
+# def main():
+#     pygame.init()
 
-def record_arrow_keystrokes():
-    global recorded_actions
+#     key_mapping = {
+#         pygame.K_UP: "up",
+#         pygame.K_DOWN: "down",
+#         pygame.K_LEFT: "left",
+#         pygame.K_RIGHT: "right"
+#     }
 
-    print("Press arrow keys to record actions. Press 'q' to stop recording.")
-    with keyboard.Listener(on_press=on_press) as listener:
-        listener.join()
+#     arrow_key_list = []
 
-if __name__ == "__main__":
-    record_arrow_keystrokes()
-    print("Recorded Actions:", recorded_actions)
+#     start_time = time.time()
+
+#     while time.time() - start_time < 10:
+#         for event in pygame.event.get():
+#             if event.type == pygame.KEYDOWN and event.key in key_mapping:
+#                 key_name = key_mapping[event.key]
+#                 arrow_key_list.append(key_name)
+
+#     pygame.quit()
+
+#     print("Captured Arrow Keys:")
+#     for i, key_name in enumerate(arrow_key_list, start=1):
+#         print(f"{i}. {key_name}")
+
+# if __name__ == "__main__":
+#     main()

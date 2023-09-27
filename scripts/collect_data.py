@@ -2,12 +2,14 @@ import gymnasium as gym
 import numpy as np 
 from datetime import datetime, time
 import time
-import random
-import cv2
+import random, pygame
 import os
+from highway_env.envs.common import graphics 
+from highway_env.envs.common import abstract
 
 seed_num = random.randint(0,1000) #save seed value to replicate it later 
 output =str(seed_num) + ":" + datetime.now().strftime("%m_%d_%H:%M") + ".npy"
+
 
 
 #MAKE AND RUN THE EPISODE
@@ -36,37 +38,41 @@ done = stop_prog = False
 data = []
 reward = 0
 counter = 0
+run_time = 10 #duration of episode
+stop_time = time.time() +run_time #run episode for 10 seconds
 
-stop_time = time.time() + 10 #run episode for 10 seconds
 
-while not(done or stop_prog):
+while not(done or stop_prog): # loop to keep main program running
+    # print("+++++++++++++++++++++")
     if(time.time() > stop_time):
         stop_prog = True
     counter+=1
     dummy_action = env.action_space.sample() 
+    
     data.append({'reward': reward, 'obs': obs, 'info': info, 'done':done})
-   
-    obs = env.render()
-    obs, reward, done, truncated, info = env.step(dummy_action)
-    print(obs)
-    print(env.viewer.manual_act) #view action value 
-    data[-1].update({'man_act': env.viewer.manual_act}) #ADD action value to data dict
+    obs,val = env.render()
+    if val !=1: print(val)
+    #if val != 1: print("Collect val:", val)
+    obs, reward, done, truncated, info, = env.step(dummy_action)
+    data[-1].update({'man_act': val}) #ADD action value to data dict
+    
 
-      
-      
 print(len(data), counter) #Verify length of data (Should match total steps in that episode )
+for x in data: #check for None action values in list of car actions
+    if x['man_act'] is None:
+        print("invalid entry")
+        break
 
 cur_path = os.getcwd()
 des = "/training_data/emg_vehicle/"
 save_path = cur_path+des
-
 file = save_path + output
 np.save(file, data)
 print("-------------------------", end='\n')
 print("Saved to:", file)
+print(output)
 env.close()
 
 
 #command to run (python path)
 # ~/Desktop/HighwayEnv-malhar/.venv/bin/python run_code.py 
-    
