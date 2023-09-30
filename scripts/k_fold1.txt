@@ -1,0 +1,167 @@
+Total input datapoints 18189 || total output label datapoints 54567 || # of files:50
+Total input datapoints 36285 || total output label datapoints 108855 || # of files:50
+
+N Estimators:  100
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6400
+Feature_5: 0.1594
+Feature_3: 0.0908
+Feature_4: 0.0762
+Feature_6: 0.0310
+Feature_2: 0.0026
+Fold 0 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6736
+Feature_5: 0.1363
+Feature_3: 0.0775
+Feature_4: 0.0764
+Feature_6: 0.0308
+Feature_2: 0.0054
+Fold 1 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6305
+Feature_5: 0.1457
+Feature_3: 0.0915
+Feature_4: 0.0902
+Feature_6: 0.0349
+Feature_2: 0.0072
+Fold 2 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4875 || Total No EMG Data points:31410
+
+N Estimators:  150
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6702
+Feature_5: 0.1489
+Feature_3: 0.0815
+Feature_4: 0.0669
+Feature_6: 0.0246
+Feature_2: 0.0078
+Fold 0 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6393
+Feature_5: 0.1598
+Feature_3: 0.1006
+Feature_4: 0.0656
+Feature_6: 0.0314
+Feature_2: 0.0032
+Fold 1 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6481
+Feature_5: 0.1521
+Feature_4: 0.0907
+Feature_3: 0.0810
+Feature_6: 0.0255
+Feature_2: 0.0026
+Fold 2 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4875 || Total No EMG Data points:31410
+
+N Estimators:  200
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6538
+Feature_5: 0.1355
+Feature_3: 0.0869
+Feature_4: 0.0852
+Feature_6: 0.0314
+Feature_2: 0.0071
+Fold 0 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6593
+Feature_5: 0.1311
+Feature_4: 0.0898
+Feature_3: 0.0840
+Feature_6: 0.0295
+Feature_2: 0.0064
+Fold 1 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6469
+Feature_5: 0.1586
+Feature_3: 0.0903
+Feature_4: 0.0713
+Feature_6: 0.0293
+Feature_2: 0.0037
+Fold 2 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4875 || Total No EMG Data points:31410
+
+N Estimators:  250
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6335
+Feature_5: 0.1676
+Feature_3: 0.0878
+Feature_4: 0.0769
+Feature_6: 0.0284
+Feature_2: 0.0057
+Fold 0 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6602
+Feature_5: 0.1448
+Feature_3: 0.0891
+Feature_4: 0.0745
+Feature_6: 0.0269
+Feature_2: 0.0046
+Fold 1 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
+Important Features:
+Feature_1: 0.6520
+Feature_5: 0.1436
+Feature_3: 0.0900
+Feature_4: 0.0738
+Feature_6: 0.0345
+Feature_2: 0.0061
+Fold 2 Accuracy Results:
+EMG accuracy: 100.0 || No Emg Accuracy: 100.0
+Total Test datapoints: 36285 || Total EMG data points: 4875 || Total No EMG Data points:31410
+Elapsed time to run the script: 4666.027 seconds or 77.77 minutes

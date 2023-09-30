@@ -1,43 +1,42 @@
 Total input datapoints 18189 || total output label datapoints 54567 || # of files:50
 Total input datapoints 36285 || total output label datapoints 108855 || # of files:50
-KFold(n_splits=3, random_state=None, shuffle=True)
 ---------------------------------------------------------------------------
 Fold 0:
 Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
 Important Features:
-Feature_1: 0.6429
-Feature_5: 0.1594
-Feature_3: 0.0826
-Feature_4: 0.0781
-Feature_6: 0.0301
-Feature_2: 0.0069
+Feature_1: 0.6520
+Feature_5: 0.1501
+Feature_3: 0.0827
+Feature_4: 0.0823
+Feature_6: 0.0278
+Feature_2: 0.0051
 Fold 0 Accuracy Results:
 EMG accuracy: 100.0 || No Emg Accuracy: 100.0
-Total Test datapoints:36285|| Total EMG data points: 4898 || Total No EMG Data points:31387
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
 ---------------------------------------------------------------------------
 Fold 1:
 Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
 Important Features:
-Feature_1: 0.6389
-Feature_5: 0.1588
-Feature_4: 0.0865
-Feature_3: 0.0853
-Feature_6: 0.0256
-Feature_2: 0.0049
+Feature_1: 0.6478
+Feature_5: 0.1464
+Feature_3: 0.0882
+Feature_4: 0.0786
+Feature_6: 0.0357
+Feature_2: 0.0034
 Fold 1 Accuracy Results:
 EMG accuracy: 100.0 || No Emg Accuracy: 100.0
-Total Test datapoints:36285|| Total EMG data points: 4882 || Total No EMG Data points:31403
+Total Test datapoints: 36285 || Total EMG data points: 4874 || Total No EMG Data points:31411
 ---------------------------------------------------------------------------
 Fold 2:
 Total datapoints: 108855 || # of training data: 72570 || # of test data: 36285
 Important Features:
-Feature_1: 0.6359
-Feature_5: 0.1647
-Feature_3: 0.0921
-Feature_4: 0.0722
-Feature_6: 0.0314
-Feature_2: 0.0038
+Feature_1: 0.6496
+Feature_5: 0.1590
+Feature_3: 0.0871
+Feature_4: 0.0732
+Feature_6: 0.0281
+Feature_2: 0.0031
 Fold 2 Accuracy Results:
 EMG accuracy: 100.0 || No Emg Accuracy: 100.0
-Total Test datapoints:36285|| Total EMG data points: 4843 || Total No EMG Data points:31442
-Elapsed time to run the script: 1223.044 seconds or 20.38 minutes
+Total Test datapoints: 36285 || Total EMG data points: 4875 || Total No EMG Data points:31410
+Elapsed time to run the script: 2427.691 seconds or 40.46 minutes

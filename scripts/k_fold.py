@@ -9,7 +9,7 @@ import os
 from sklearn.ensemble import RandomForestClassifier
 import gymnasium as gym
 import glob, time
-from sklearn.model_selection import KFold
+from sklearn.model_selection import KFold, StratifiedKFold
 
 
 obs_data = []
@@ -42,11 +42,11 @@ def clean_model_input(obs_data, emg_presence):
     return obs_data, emg_presence
 
     
-def trainer(obs, emg):
+def trainer(obs, emg, num_trees):
     assert obs.shape[0] == emg.shape[0] #check if the obs and output label shape match
     assert len(obs.shape) == 2 #cehck if obs is a 2d matrix
     assert len(emg.shape) == 1 #check if emg is 1d matrix
-    final_model = RandomForestClassifier(n_estimators=200) #train model 
+    final_model = RandomForestClassifier(n_estimators=num_trees) #train model 
     final_model.fit(obs,emg) # obs = 
     return final_model
 
@@ -106,12 +106,14 @@ def accuracy_calulation(model, test_data, x):
     print("Total Test datapoints: " + str(len(test_data))+ " || Total EMG data points: " + str(emg_total) + " || Total No EMG Data points:" + str(no_emg_total))
     
 
-def k_validation(dataset):
-    kf = KFold(n_splits=3, random_state=None,shuffle=True)
-    kf.get_n_splits(dataset)
-    print(kf)
+def k_validation(dataset,emg, num_trees):
+    #kf = KFold(n_splits=3, random_state=None,shuffle=True)
+    #kf.get_n_splits(dataset)
+    skf = StratifiedKFold(n_splits=3, random_state=None, shuffle=True)
+    #print(kf)
+    skf.get_n_splits(dataset,emg)
    
-    for i, (train_index, test_index) in enumerate(kf.split(dataset)): # go through each fold in kfold split
+    for i, (train_index, test_index) in enumerate(skf.split(dataset,emg)): # go through each fold in kfold split
         print("---------------------------------------------------------------------------")
         print(f"Fold {i}:")
         print("Total datapoints:",len(obs_data),"|| # of training data:", len(train_index), "|| # of test data:", len(test_index))
@@ -131,7 +133,7 @@ def k_validation(dataset):
         train_data = np.array(train_data)
         emg_presence = np.array(emg_presence)
 
-        model = trainer(train_data,emg_presence)
+        model = trainer(train_data,emg_presence, num_trees) #vary N-estimators parameters 
         important_features(model)
         accuracy_calulation(model,test_data, i)
        
@@ -144,8 +146,10 @@ if __name__ == '__main__':
     cwd = os.getcwd() +'/training_data/no_emg/'
     obs_data, action_data = load_files(cwd) # load all obs / action data
     obs_data, action_data = clean_model_input(obs_data, action_data) #reformat data
-
-    k_validation(obs_data)
+    num_trees = [100,150,200,250]
+    for x in num_trees:
+        print("N Estimators: ", x)
+        k_validation(obs_data,action_data,x)
     
     elapsed_time = time.time() - start_time
     elapsed_time2 = elapsed_time/60
