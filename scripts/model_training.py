@@ -7,34 +7,31 @@ import sys
 import os 
 from sklearn.ensemble import RandomForestClassifier
 import gymnasium as gym
-import glob
+import glob, time
 
-
+obs_data = []
+action_data = []
+c = 0
 def load_files(file_path):
-    obs_data = []
-    action_data = []
-   
-    f = 0
+    global c
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
-            f+=1
+            c+=1
             data = np.load(os.path.join(file_path, x), allow_pickle=True)
             obs_data.extend([d['obs'] for d in data])
             action_data.extend([(d['man_act']) for d in data])
         
-    print(len(obs_data), len(action_data), f)
-    return obs_data, action_data
+    return obs_data, action_data,c
 
 def clean_model_input(obs_data, action_data):
 
      # Convert observation data to a 2D array
     obs_data = np.array(obs_data) #b, 3,6
     batch = obs_data.shape[0] #b 
+
     # Convert action data to a 1D array
     action_data = np.array(action_data)
-
     obs_data = obs_data.reshape((batch, -1)) #b *18
-
 
     return obs_data, action_data
     
@@ -61,47 +58,80 @@ def important_features(model):
     for feature, importance in sorted_features:
         print(f"{feature}: {importance:.4f}")
 
-if __name__ == '__main__':
-    cwd = os.getcwd()
-    cwd = cwd + "/training_data/emg_vehicle/"
-    obs_data, action_data = load_files(cwd)
-    obs_data, action_data = clean_model_input(obs_data, action_data)
-
-    model = trainer(obs_data, action_data)  #train model based on obs and action val data
-    print("Trained Model: ", model) #print weights of model
-    important_features(model) #extract and print important features of model 
-   
-    
-
 
 def predict(final_model, obs):
     predict_action = final_model.predict(obs)
     return predict_action
 
 
-def test_env(model):
-    env = gym.make('highway-v0', render_mode='rgb_array')
-    env.configure({
-        "manual_control": False,
-        "observation": {
-            "type": "Kinematics",
-            "vehicles_count": 3,
-            "features": ["car_id","presence", "x", "y", "vx", "vy"],
-            "features_range": {
-                "x": [-100, 100],
-                "y": [-100, 100],
-                "vx": [-20, 50],
-                "vy": [-20, 50]
-            },
-            "absolute": False,
-            "order": "sorted"
-        }
-    })
+def accuracy_check(model):
+    c = 0
+    obs = []
+    act = []
+    obs_final = []
+    #open test episdoes and extract obs data
+    file_path = os.getcwd() + "/training_data/test/"
+    for x in os.listdir(file_path):
+        if x.endswith(".npy"):
+            c+=1
+            data = np.load(os.path.join(file_path, x), allow_pickle=True)
+            obs.extend([d['obs'] for d in data])
+            act.extend([d['man_act'] for d in data])
+   
+    
+    # fix sub list within list issue
+    for x in obs:
+        temp = []
+        test = x.tolist()
+        for x in test:
+            temp.extend(x)
+        obs_final.append(temp)
+    obs_final = np.array(obs_final)
 
-    action = predict(model, obs)
-    print("act", action)
-    obs, reward, done, truncated, info = env.step(action)
-    print("obs", obs)
-    obs = env.render()
+    assert len(obs_final) == len(act) #ensure # of obs == # of action values in test files
 
-    env.close()
+    #accuracy check
+    count = 0
+    action_total = 0
+    action_correct = 0
+    f = open("test.txt", "w+")
+    for i, n in enumerate(obs_final): 
+        count+=1
+        action_total+=1
+        data = n
+        data = data[None]
+        v = predict(model,data)
+        v = v[0]
+        f.write("Model Prediction: " + str(v) + ", ")
+        gt = act[i]
+        f.write("GT: " +str(gt)+"\n")
+        if (gt == v):
+            action_correct+=1
+    action_acc = (action_correct / action_total) * 100
+
+    val = "{:.3f}".format(action_acc)
+    print("Action accuracy: " + val)
+    print("Total action data points: " + str(action_total))
+    print("# of Test datapoints:" + str(len(obs)) +  " count of datapoints:" + str(count) + " || number of test files:" + str(c))
+
+if __name__ == '__main__':
+    start_time = time.time()
+    cwd = os.getcwd()
+    cwd = cwd + "/training_data/emg_vehicle/"
+    obs_data, action_data,c = load_files(cwd)
+    cwd = os.getcwd() +'/training_data/no_emg/'
+    obs_data, action_data,c = load_files(cwd)
+    print("Total input datapoints " + str(len(obs_data)) + " || total output label datapoints " + str(len(action_data)) + " || # of files " +str(c))
+    
+    obs_data, action_data = clean_model_input(obs_data, action_data)
+    model = trainer(obs_data, action_data)  #train model based on obs and action val data
+    important_features(model) #extract and print important features of model 
+
+    accuracy_check(model)
+
+
+    elapsed_time = time.time() - start_time 
+    elapsed_time2 = elapsed_time/60
+    print(f"Elapsed time to run the script: {elapsed_time:.3f} seconds or {elapsed_time2:.2f} minutes" )
+    
+
