@@ -77,7 +77,7 @@ def accuracy_calulation(model, test_data, x):
     no_emg_total = 0 #total no emg data points
     emg_correct = 0 #correct emg predictions
     no_emg_correct = 0 #correct no emg predictions
-    f = open(f"Fold:{x}.txt", "w+")
+    f = open(f"EMG-Presence_Fold:{x}.txt", "w+")
     for i in test_data:
         data = i
         x_test = data[None]
