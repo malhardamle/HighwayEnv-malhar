@@ -140,10 +140,9 @@ def k_validation(dataset,emg, num_trees):
 
 if __name__ == '__main__':
     start_time = time.time()
-    cwd = os.getcwd()
-    cwd = cwd + "/training_data/emg_vehicle/"
+    cwd =  "../training_data/emg_vehicle/"
     obs_data, action_data = load_files(cwd)
-    cwd = os.getcwd() +'/training_data/no_emg/'
+    cwd = '../training_data/no_emg/'
     obs_data, action_data = load_files(cwd) # load all obs / action data
     obs_data, action_data = clean_model_input(obs_data, action_data) #reformat data
     num_trees = [100,150,200,250]
