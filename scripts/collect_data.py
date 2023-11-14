@@ -64,7 +64,7 @@ for x in data: #check for None action values in list of car actions
         break
 
 cur_path = os.getcwd()
-des = "/training_data/validate/"
+des = "/training_data/improvement2/"
 save_path = cur_path+des
 file = save_path + output
 np.save(file, data)

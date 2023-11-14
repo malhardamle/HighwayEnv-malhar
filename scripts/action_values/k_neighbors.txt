@@ -1,0 +1,303 @@
+Total input datapoints 609 || total output label datapoints 609 || # of files 156
+Action Value Split:  103 101 116 178 111
+EMG is in 236 frames! 38.75 %
+Action Value Split:  103 101 116 178 111
+N_ESTIMATORS:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  35.294 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  66.667 total instances:  39
+Act3 Accuracy:  59.322 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 57.635
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  19.211666666666666  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  41.176 total instances:  34
+Act1 Accuracy:  85.294 total instances:  34
+Act2 Accuracy:  55.263 total instances:  38
+Act3 Accuracy:  71.667 total instances:  60
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 61.084
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  39.573  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  31.429 total instances:  35
+Act1 Accuracy:  87.879 total instances:  33
+Act2 Accuracy:  58.974 total instances:  39
+Act3 Accuracy:  57.627 total instances:  59
+Act4 Accuracy:  13.514 total instances:  37
+Action accuracy: 50.246
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  56.321666666666665  average accuracy on this split
+N_ESTIMATORS:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  35.294 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  53.846 total instances:  39
+Act3 Accuracy:  66.102 total instances:  59
+Act4 Accuracy:  18.919 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  18.226666666666667  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  41.176 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  60.526 total instances:  38
+Act3 Accuracy:  68.333 total instances:  60
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 58.128
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  37.602666666666664  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  34.286 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  61.538 total instances:  39
+Act3 Accuracy:  55.932 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 55.665
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  56.157666666666664  average accuracy on this split
+N_ESTIMATORS:  10
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  47.059 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  56.410 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  13.514 total instances:  37
+Action accuracy: 58.621
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  19.540333333333333  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  38.235 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  63.158 total instances:  38
+Act3 Accuracy:  61.667 total instances:  60
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 57.635
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  38.752  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  28.571 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  66.667 total instances:  39
+Act3 Accuracy:  61.017 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 56.650
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  57.635333333333335  average accuracy on this split
+N_ESTIMATORS:  50
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  38.235 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 56.158
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  18.719333333333335  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  52.941 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  55.263 total instances:  38
+Act3 Accuracy:  50.000 total instances:  60
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 52.217
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  36.125  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  51.429 total instances:  35
+Act1 Accuracy:  84.848 total instances:  33
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  62.712 total instances:  59
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.35166666666667  average accuracy on this split
+N_ESTIMATORS:  100
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  26.471 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  57.627 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 50.246
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  16.74866666666667  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  55.882 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  50.000 total instances:  38
+Act3 Accuracy:  61.667 total instances:  60
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 58.621
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  36.289  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  42.857 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  58.974 total instances:  39
+Act3 Accuracy:  66.102 total instances:  59
+Act4 Accuracy:  10.811 total instances:  37
+Action accuracy: 55.172
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.67966666666666  average accuracy on this split
+N_ESTIMATORS:  150
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  32.353 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  52.542 total instances:  59
+Act4 Accuracy:  18.919 total instances:  37
+Action accuracy: 48.276
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  16.092000000000002  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  44.118 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  44.737 total instances:  38
+Act3 Accuracy:  60.000 total instances:  60
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 53.202
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  33.826  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  48.571 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  69.231 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 62.562
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.68000000000001  average accuracy on this split
+N_ESTIMATORS:  200
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  32.353 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  56.410 total instances:  39
+Act3 Accuracy:  57.627 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 55.172
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  18.390666666666664  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  35.294 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  36.842 total instances:  38
+Act3 Accuracy:  71.667 total instances:  60
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 55.172
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  36.78133333333333  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  37.143 total instances:  35
+Act1 Accuracy:  87.879 total instances:  33
+Act2 Accuracy:  61.538 total instances:  39
+Act3 Accuracy:  61.017 total instances:  59
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.008  average accuracy on this split
+N_ESTIMATORS:  250
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  52.941 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  58.974 total instances:  39
+Act3 Accuracy:  57.627 total instances:  59
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 58.621
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  19.540333333333333  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  41.176 total instances:  34
+Act1 Accuracy:  88.235 total instances:  34
+Act2 Accuracy:  57.895 total instances:  38
+Act3 Accuracy:  58.333 total instances:  60
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  37.767  average accuracy on this split
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Act0 Accuracy:  22.857 total instances:  35
+Act1 Accuracy:  90.909 total instances:  33
+Act2 Accuracy:  48.718 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.99366666666666  average accuracy on this split
+62.562 % accuracy n_estimator:  150 DEPTH:  2
+609
+Elapsed time to run the script: 5.577 seconds or 0.09 minutes

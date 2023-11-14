@@ -1,0 +1,2615 @@
+Total input datapoints 609 || total output label datapoints 609 || # of files 156
+Action Value Split:  103 101 116 178 111
+EMG is in 236 frames! 38.75 %
+Action Value Split:  103 101 116 178 111
+N_ESTIMATORS:  1
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3377
+Feature_5 | Traffic x: 0.2417
+Feature_7 | Emg car_id: 0.1871
+Feature_9 | Emg y: 0.1076
+Feature_3 | Ego y: 0.0877
+Feature_6 | Traffic y: 0.0232
+Feature_4 | Traffic car_id: 0.0149
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  73.529 total instances:  34
+Act2 Accuracy:  0.000 total instances:  39
+Act3 Accuracy:  61.017 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 36.453
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2954
+Feature_8 | Emg x: 0.2855
+Feature_7 | Emg car_id: 0.1584
+Feature_9 | Emg y: 0.0941
+Feature_3 | Ego y: 0.0924
+Feature_6 | Traffic y: 0.0644
+Feature_4 | Traffic car_id: 0.0099
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  60.526 total instances:  38
+Act3 Accuracy:  75.000 total instances:  60
+Act4 Accuracy:  16.216 total instances:  37
+Action accuracy: 36.453
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3207
+Feature_5 | Traffic x: 0.2632
+Feature_7 | Emg car_id: 0.1365
+Feature_3 | Ego y: 0.1118
+Feature_9 | Emg y: 0.1118
+Feature_6 | Traffic y: 0.0395
+Feature_4 | Traffic car_id: 0.0164
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  75.758 total instances:  33
+Act2 Accuracy:  30.769 total instances:  39
+Act3 Accuracy:  79.661 total instances:  59
+Act4 Accuracy:  18.919 total instances:  37
+Action accuracy: 44.828
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  39.24466666666667  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3015
+Feature_5 | Traffic x: 0.2372
+Feature_3 | Ego y: 0.1663
+Feature_7 | Emg car_id: 0.1331
+Feature_9 | Emg y: 0.0876
+Feature_6 | Traffic y: 0.0510
+Feature_4 | Traffic car_id: 0.0232
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  51.282 total instances:  39
+Act3 Accuracy:  62.712 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 51.232
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.3146
+Feature_8 | Emg x: 0.2309
+Feature_3 | Ego y: 0.1679
+Feature_7 | Emg car_id: 0.0863
+Feature_6 | Traffic y: 0.0774
+Feature_9 | Emg y: 0.0724
+Feature_4 | Traffic car_id: 0.0506
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  42.105 total instances:  38
+Act3 Accuracy:  70.000 total instances:  60
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 48.768
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2805
+Feature_5 | Traffic x: 0.2069
+Feature_3 | Ego y: 0.1635
+Feature_7 | Emg car_id: 0.1292
+Feature_6 | Traffic y: 0.0927
+Feature_9 | Emg y: 0.0786
+Feature_4 | Traffic car_id: 0.0487
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  74.576 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 48.768
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  49.589333333333336  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2308
+Feature_3 | Ego y: 0.2257
+Feature_5 | Traffic x: 0.2005
+Feature_6 | Traffic y: 0.1105
+Feature_9 | Emg y: 0.0908
+Feature_7 | Emg car_id: 0.0885
+Feature_4 | Traffic car_id: 0.0532
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  56.410 total instances:  39
+Act3 Accuracy:  62.712 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 49.754
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2418
+Feature_8 | Emg x: 0.2257
+Feature_3 | Ego y: 0.2113
+Feature_7 | Emg car_id: 0.1005
+Feature_9 | Emg y: 0.0920
+Feature_6 | Traffic y: 0.0843
+Feature_4 | Traffic car_id: 0.0444
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  2.941 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  31.579 total instances:  38
+Act3 Accuracy:  85.000 total instances:  60
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2517
+Feature_8 | Emg x: 0.2383
+Feature_3 | Ego y: 0.2374
+Feature_6 | Traffic y: 0.1009
+Feature_7 | Emg car_id: 0.0658
+Feature_9 | Emg y: 0.0584
+Feature_4 | Traffic car_id: 0.0474
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.429 total instances:  35
+Act1 Accuracy:  90.909 total instances:  33
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  69.492 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 49.261
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  51.23166666666666  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2712
+Feature_5 | Traffic x: 0.2223
+Feature_8 | Emg x: 0.2037
+Feature_6 | Traffic y: 0.1084
+Feature_9 | Emg y: 0.0860
+Feature_7 | Emg car_id: 0.0720
+Feature_4 | Traffic car_id: 0.0364
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  59.322 total instances:  59
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 50.739
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2723
+Feature_8 | Emg x: 0.2047
+Feature_5 | Traffic x: 0.2024
+Feature_6 | Traffic y: 0.1329
+Feature_9 | Emg y: 0.0847
+Feature_7 | Emg car_id: 0.0550
+Feature_4 | Traffic car_id: 0.0478
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  2.941 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  34.211 total instances:  38
+Act3 Accuracy:  78.333 total instances:  60
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 52.709
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2473
+Feature_5 | Traffic x: 0.2118
+Feature_8 | Emg x: 0.2035
+Feature_6 | Traffic y: 0.1193
+Feature_9 | Emg y: 0.0954
+Feature_7 | Emg car_id: 0.0754
+Feature_4 | Traffic car_id: 0.0473
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.429 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  89.831 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 58.128
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  53.85866666666667  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.3026
+Feature_5 | Traffic x: 0.2235
+Feature_8 | Emg x: 0.1899
+Feature_6 | Traffic y: 0.1195
+Feature_9 | Emg y: 0.0730
+Feature_7 | Emg car_id: 0.0515
+Feature_4 | Traffic car_id: 0.0401
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  5.882 total instances:  34
+Act1 Accuracy:  88.235 total instances:  34
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  66.102 total instances:  59
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 48.768
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2995
+Feature_5 | Traffic x: 0.1988
+Feature_8 | Emg x: 0.1802
+Feature_6 | Traffic y: 0.1276
+Feature_9 | Emg y: 0.1000
+Feature_7 | Emg car_id: 0.0526
+Feature_4 | Traffic car_id: 0.0413
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  20.588 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  39.474 total instances:  38
+Act3 Accuracy:  73.333 total instances:  60
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 56.158
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2760
+Feature_8 | Emg x: 0.2083
+Feature_5 | Traffic x: 0.1747
+Feature_6 | Traffic y: 0.1485
+Feature_9 | Emg y: 0.1040
+Feature_7 | Emg car_id: 0.0556
+Feature_4 | Traffic car_id: 0.0329
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.571 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  84.746 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 56.650
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  53.858666666666664  average accuracy on this split
+N_ESTIMATORS:  5
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3152
+Feature_5 | Traffic x: 0.2409
+Feature_7 | Emg car_id: 0.1766
+Feature_3 | Ego y: 0.1106
+Feature_9 | Emg y: 0.0957
+Feature_6 | Traffic y: 0.0462
+Feature_4 | Traffic car_id: 0.0149
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  70.588 total instances:  34
+Act2 Accuracy:  17.949 total instances:  39
+Act3 Accuracy:  66.102 total instances:  59
+Act4 Accuracy:  13.514 total instances:  37
+Action accuracy: 36.946
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3602
+Feature_5 | Traffic x: 0.2155
+Feature_7 | Emg car_id: 0.1612
+Feature_9 | Emg y: 0.1184
+Feature_3 | Ego y: 0.1003
+Feature_6 | Traffic y: 0.0247
+Feature_4 | Traffic car_id: 0.0197
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  52.632 total instances:  38
+Act3 Accuracy:  78.333 total instances:  60
+Act4 Accuracy:  16.216 total instances:  37
+Action accuracy: 35.961
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3123
+Feature_5 | Traffic x: 0.2641
+Feature_3 | Ego y: 0.1362
+Feature_7 | Emg car_id: 0.1329
+Feature_9 | Emg y: 0.0980
+Feature_6 | Traffic y: 0.0449
+Feature_4 | Traffic car_id: 0.0116
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  28.205 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  18.919 total instances:  37
+Action accuracy: 45.813
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  39.57333333333333  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2725
+Feature_5 | Traffic x: 0.2630
+Feature_3 | Ego y: 0.1550
+Feature_7 | Emg car_id: 0.1115
+Feature_9 | Emg y: 0.0998
+Feature_6 | Traffic y: 0.0577
+Feature_4 | Traffic car_id: 0.0404
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  73.529 total instances:  34
+Act2 Accuracy:  51.282 total instances:  39
+Act3 Accuracy:  64.407 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 48.768
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2905
+Feature_8 | Emg x: 0.2544
+Feature_3 | Ego y: 0.1622
+Feature_7 | Emg car_id: 0.1058
+Feature_9 | Emg y: 0.0933
+Feature_6 | Traffic y: 0.0615
+Feature_4 | Traffic car_id: 0.0323
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  42.105 total instances:  38
+Act3 Accuracy:  83.333 total instances:  60
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 52.709
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2660
+Feature_5 | Traffic x: 0.2286
+Feature_3 | Ego y: 0.1644
+Feature_7 | Emg car_id: 0.1168
+Feature_6 | Traffic y: 0.0942
+Feature_9 | Emg y: 0.0875
+Feature_4 | Traffic car_id: 0.0425
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  87.879 total instances:  33
+Act2 Accuracy:  35.897 total instances:  39
+Act3 Accuracy:  74.576 total instances:  59
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 47.291
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  49.589333333333336  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2447
+Feature_3 | Ego y: 0.2436
+Feature_8 | Emg x: 0.2122
+Feature_6 | Traffic y: 0.0924
+Feature_9 | Emg y: 0.0855
+Feature_7 | Emg car_id: 0.0686
+Feature_4 | Traffic car_id: 0.0530
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  81.356 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 53.202
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2355
+Feature_3 | Ego y: 0.2286
+Feature_5 | Traffic x: 0.2209
+Feature_7 | Emg car_id: 0.0961
+Feature_6 | Traffic y: 0.0892
+Feature_9 | Emg y: 0.0882
+Feature_4 | Traffic car_id: 0.0416
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  5.882 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  55.263 total instances:  38
+Act3 Accuracy:  60.000 total instances:  60
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 53.202
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2439
+Feature_5 | Traffic x: 0.2266
+Feature_3 | Ego y: 0.2109
+Feature_6 | Traffic y: 0.1125
+Feature_7 | Emg car_id: 0.0822
+Feature_9 | Emg y: 0.0679
+Feature_4 | Traffic car_id: 0.0560
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  35.897 total instances:  39
+Act3 Accuracy:  81.356 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 54.187
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  53.53033333333334  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2694
+Feature_8 | Emg x: 0.2194
+Feature_5 | Traffic x: 0.1892
+Feature_6 | Traffic y: 0.1213
+Feature_9 | Emg y: 0.0855
+Feature_7 | Emg car_id: 0.0711
+Feature_4 | Traffic car_id: 0.0441
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.824 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  88.136 total instances:  59
+Act4 Accuracy:  40.541 total instances:  37
+Action accuracy: 59.606
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2519
+Feature_5 | Traffic x: 0.2299
+Feature_8 | Emg x: 0.1739
+Feature_6 | Traffic y: 0.1299
+Feature_9 | Emg y: 0.1011
+Feature_7 | Emg car_id: 0.0675
+Feature_4 | Traffic car_id: 0.0457
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  23.529 total instances:  34
+Act1 Accuracy:  85.294 total instances:  34
+Act2 Accuracy:  26.316 total instances:  38
+Act3 Accuracy:  76.667 total instances:  60
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 52.709
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2673
+Feature_5 | Traffic x: 0.2272
+Feature_8 | Emg x: 0.2118
+Feature_6 | Traffic y: 0.1139
+Feature_9 | Emg y: 0.0739
+Feature_7 | Emg car_id: 0.0656
+Feature_4 | Traffic car_id: 0.0404
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.286 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  56.410 total instances:  39
+Act3 Accuracy:  77.966 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 57.143
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  56.486  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.3096
+Feature_8 | Emg x: 0.1833
+Feature_5 | Traffic x: 0.1822
+Feature_6 | Traffic y: 0.1446
+Feature_9 | Emg y: 0.0854
+Feature_7 | Emg car_id: 0.0570
+Feature_4 | Traffic car_id: 0.0380
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.824 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  74.576 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 53.695
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2923
+Feature_5 | Traffic x: 0.2223
+Feature_8 | Emg x: 0.1627
+Feature_6 | Traffic y: 0.1155
+Feature_9 | Emg y: 0.1008
+Feature_7 | Emg car_id: 0.0537
+Feature_4 | Traffic car_id: 0.0527
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  36.842 total instances:  38
+Act3 Accuracy:  80.000 total instances:  60
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 53.695
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2768
+Feature_8 | Emg x: 0.2232
+Feature_5 | Traffic x: 0.2076
+Feature_6 | Traffic y: 0.1255
+Feature_9 | Emg y: 0.0761
+Feature_7 | Emg car_id: 0.0624
+Feature_4 | Traffic car_id: 0.0285
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  20.000 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 56.158
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.516  average accuracy on this split
+N_ESTIMATORS:  10
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3191
+Feature_5 | Traffic x: 0.2911
+Feature_3 | Ego y: 0.1217
+Feature_7 | Emg car_id: 0.1217
+Feature_9 | Emg y: 0.1118
+Feature_6 | Traffic y: 0.0247
+Feature_4 | Traffic car_id: 0.0099
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  67.647 total instances:  34
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  10.811 total instances:  37
+Action accuracy: 42.857
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3350
+Feature_5 | Traffic x: 0.2046
+Feature_7 | Emg car_id: 0.1997
+Feature_9 | Emg y: 0.1122
+Feature_3 | Ego y: 0.0924
+Feature_6 | Traffic y: 0.0495
+Feature_4 | Traffic car_id: 0.0066
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  57.895 total instances:  38
+Act3 Accuracy:  76.667 total instances:  60
+Act4 Accuracy:  13.514 total instances:  37
+Action accuracy: 35.961
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3295
+Feature_5 | Traffic x: 0.2175
+Feature_7 | Emg car_id: 0.1779
+Feature_3 | Ego y: 0.1219
+Feature_9 | Emg y: 0.1038
+Feature_6 | Traffic y: 0.0362
+Feature_4 | Traffic car_id: 0.0132
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  23.077 total instances:  39
+Act3 Accuracy:  64.407 total instances:  59
+Act4 Accuracy:  5.405 total instances:  37
+Action accuracy: 40.394
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  39.73733333333333  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2949
+Feature_5 | Traffic x: 0.2417
+Feature_3 | Ego y: 0.1486
+Feature_7 | Emg car_id: 0.1389
+Feature_9 | Emg y: 0.0791
+Feature_6 | Traffic y: 0.0593
+Feature_4 | Traffic car_id: 0.0373
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  88.235 total instances:  34
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  67.797 total instances:  59
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 45.813
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2570
+Feature_5 | Traffic x: 0.2457
+Feature_3 | Ego y: 0.1999
+Feature_9 | Emg y: 0.0970
+Feature_7 | Emg car_id: 0.0775
+Feature_6 | Traffic y: 0.0646
+Feature_4 | Traffic car_id: 0.0584
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  70.588 total instances:  34
+Act2 Accuracy:  44.737 total instances:  38
+Act3 Accuracy:  70.000 total instances:  60
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 49.261
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2928
+Feature_5 | Traffic x: 0.2831
+Feature_3 | Ego y: 0.1462
+Feature_7 | Emg car_id: 0.1054
+Feature_9 | Emg y: 0.0777
+Feature_6 | Traffic y: 0.0740
+Feature_4 | Traffic car_id: 0.0208
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  35.897 total instances:  39
+Act3 Accuracy:  66.102 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 48.276
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  47.78333333333334  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2437
+Feature_8 | Emg x: 0.2288
+Feature_3 | Ego y: 0.2225
+Feature_7 | Emg car_id: 0.0946
+Feature_6 | Traffic y: 0.0903
+Feature_9 | Emg y: 0.0748
+Feature_4 | Traffic car_id: 0.0454
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  2.941 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  77.966 total instances:  59
+Act4 Accuracy:  48.649 total instances:  37
+Action accuracy: 56.650
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2575
+Feature_8 | Emg x: 0.2202
+Feature_3 | Ego y: 0.2173
+Feature_6 | Traffic y: 0.1149
+Feature_7 | Emg car_id: 0.0756
+Feature_9 | Emg y: 0.0607
+Feature_4 | Traffic car_id: 0.0538
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.824 total instances:  34
+Act1 Accuracy:  88.235 total instances:  34
+Act2 Accuracy:  47.368 total instances:  38
+Act3 Accuracy:  78.333 total instances:  60
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 55.172
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2374
+Feature_8 | Emg x: 0.2133
+Feature_5 | Traffic x: 0.2003
+Feature_9 | Emg y: 0.1106
+Feature_6 | Traffic y: 0.1040
+Feature_7 | Emg car_id: 0.0874
+Feature_4 | Traffic car_id: 0.0471
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  90.909 total instances:  33
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  21.622 total instances:  37
+Action accuracy: 50.739
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.187000000000005  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2775
+Feature_8 | Emg x: 0.2111
+Feature_5 | Traffic x: 0.1954
+Feature_6 | Traffic y: 0.1072
+Feature_7 | Emg car_id: 0.0851
+Feature_9 | Emg y: 0.0833
+Feature_4 | Traffic car_id: 0.0404
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  88.235 total instances:  34
+Act2 Accuracy:  61.538 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 57.635
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2762
+Feature_5 | Traffic x: 0.2020
+Feature_8 | Emg x: 0.1878
+Feature_6 | Traffic y: 0.1457
+Feature_9 | Emg y: 0.0718
+Feature_4 | Traffic car_id: 0.0586
+Feature_7 | Emg car_id: 0.0580
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  17.647 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  34.211 total instances:  38
+Act3 Accuracy:  76.667 total instances:  60
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 53.202
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2581
+Feature_3 | Ego y: 0.2260
+Feature_8 | Emg x: 0.1963
+Feature_6 | Traffic y: 0.1093
+Feature_9 | Emg y: 0.0899
+Feature_7 | Emg car_id: 0.0770
+Feature_4 | Traffic car_id: 0.0434
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  5.714 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  35.897 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 52.709
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.51533333333333  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2912
+Feature_5 | Traffic x: 0.1966
+Feature_8 | Emg x: 0.1719
+Feature_6 | Traffic y: 0.1309
+Feature_9 | Emg y: 0.1027
+Feature_7 | Emg car_id: 0.0597
+Feature_4 | Traffic car_id: 0.0471
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  77.966 total instances:  59
+Act4 Accuracy:  40.541 total instances:  37
+Action accuracy: 56.158
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.3014
+Feature_5 | Traffic x: 0.1933
+Feature_8 | Emg x: 0.1874
+Feature_6 | Traffic y: 0.1261
+Feature_9 | Emg y: 0.0940
+Feature_7 | Emg car_id: 0.0589
+Feature_4 | Traffic car_id: 0.0389
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  23.529 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  44.737 total instances:  38
+Act3 Accuracy:  75.000 total instances:  60
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 56.650
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2795
+Feature_5 | Traffic x: 0.2113
+Feature_8 | Emg x: 0.2094
+Feature_6 | Traffic y: 0.1350
+Feature_9 | Emg y: 0.0800
+Feature_7 | Emg car_id: 0.0541
+Feature_4 | Traffic car_id: 0.0306
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  17.143 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  35.897 total instances:  39
+Act3 Accuracy:  76.271 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 56.158
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  56.322  average accuracy on this split
+N_ESTIMATORS:  50
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3152
+Feature_5 | Traffic x: 0.2558
+Feature_7 | Emg car_id: 0.1700
+Feature_9 | Emg y: 0.1188
+Feature_3 | Ego y: 0.0891
+Feature_6 | Traffic y: 0.0429
+Feature_4 | Traffic car_id: 0.0083
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  28.205 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  18.919 total instances:  37
+Action accuracy: 46.798
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3076
+Feature_5 | Traffic x: 0.2401
+Feature_7 | Emg car_id: 0.1809
+Feature_9 | Emg y: 0.1069
+Feature_3 | Ego y: 0.0954
+Feature_6 | Traffic y: 0.0576
+Feature_4 | Traffic car_id: 0.0115
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  76.471 total instances:  34
+Act2 Accuracy:  23.684 total instances:  38
+Act3 Accuracy:  66.667 total instances:  60
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 41.379
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3048
+Feature_5 | Traffic x: 0.2175
+Feature_7 | Emg car_id: 0.1697
+Feature_3 | Ego y: 0.1236
+Feature_9 | Emg y: 0.1219
+Feature_6 | Traffic y: 0.0494
+Feature_4 | Traffic car_id: 0.0132
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  23.077 total instances:  39
+Act3 Accuracy:  76.271 total instances:  59
+Act4 Accuracy:  2.703 total instances:  37
+Action accuracy: 43.350
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  43.84233333333333  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2811
+Feature_5 | Traffic x: 0.2544
+Feature_3 | Ego y: 0.1458
+Feature_7 | Emg car_id: 0.1191
+Feature_9 | Emg y: 0.0901
+Feature_6 | Traffic y: 0.0619
+Feature_4 | Traffic car_id: 0.0477
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  70.588 total instances:  34
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  67.797 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 45.813
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2486
+Feature_5 | Traffic x: 0.2384
+Feature_3 | Ego y: 0.1826
+Feature_9 | Emg y: 0.1142
+Feature_7 | Emg car_id: 0.0886
+Feature_6 | Traffic y: 0.0855
+Feature_4 | Traffic car_id: 0.0420
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  36.842 total instances:  38
+Act3 Accuracy:  81.667 total instances:  60
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 49.754
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2853
+Feature_5 | Traffic x: 0.2293
+Feature_3 | Ego y: 0.2048
+Feature_7 | Emg car_id: 0.1023
+Feature_6 | Traffic y: 0.0753
+Feature_9 | Emg y: 0.0674
+Feature_4 | Traffic car_id: 0.0356
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  87.879 total instances:  33
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  67.797 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 46.305
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  47.290666666666674  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2387
+Feature_8 | Emg x: 0.2290
+Feature_3 | Ego y: 0.2268
+Feature_9 | Emg y: 0.1005
+Feature_6 | Traffic y: 0.0974
+Feature_7 | Emg car_id: 0.0740
+Feature_4 | Traffic car_id: 0.0338
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2347
+Feature_5 | Traffic x: 0.2238
+Feature_3 | Ego y: 0.2183
+Feature_7 | Emg car_id: 0.0944
+Feature_9 | Emg y: 0.0881
+Feature_6 | Traffic y: 0.0798
+Feature_4 | Traffic car_id: 0.0609
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  5.882 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  42.105 total instances:  38
+Act3 Accuracy:  71.667 total instances:  60
+Act4 Accuracy:  51.351 total instances:  37
+Action accuracy: 53.202
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2451
+Feature_5 | Traffic x: 0.2399
+Feature_3 | Ego y: 0.2152
+Feature_6 | Traffic y: 0.1064
+Feature_9 | Emg y: 0.0802
+Feature_7 | Emg car_id: 0.0683
+Feature_4 | Traffic car_id: 0.0449
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  90.909 total instances:  33
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  84.746 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 51.232
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  53.038000000000004  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2878
+Feature_5 | Traffic x: 0.2099
+Feature_8 | Emg x: 0.1847
+Feature_6 | Traffic y: 0.1140
+Feature_9 | Emg y: 0.0987
+Feature_7 | Emg car_id: 0.0607
+Feature_4 | Traffic car_id: 0.0441
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  2.941 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  84.746 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2576
+Feature_5 | Traffic x: 0.2435
+Feature_8 | Emg x: 0.1986
+Feature_6 | Traffic y: 0.1066
+Feature_9 | Emg y: 0.0849
+Feature_7 | Emg car_id: 0.0650
+Feature_4 | Traffic car_id: 0.0437
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  47.368 total instances:  38
+Act3 Accuracy:  66.667 total instances:  60
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 53.695
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2467
+Feature_8 | Emg x: 0.2139
+Feature_5 | Traffic x: 0.2087
+Feature_6 | Traffic y: 0.1256
+Feature_9 | Emg y: 0.0782
+Feature_7 | Emg car_id: 0.0763
+Feature_4 | Traffic car_id: 0.0507
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.571 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  51.282 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 54.187
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.187333333333335  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2928
+Feature_8 | Emg x: 0.1894
+Feature_5 | Traffic x: 0.1822
+Feature_6 | Traffic y: 0.1262
+Feature_9 | Emg y: 0.1112
+Feature_7 | Emg car_id: 0.0579
+Feature_4 | Traffic car_id: 0.0404
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  74.576 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 55.172
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2950
+Feature_5 | Traffic x: 0.1993
+Feature_8 | Emg x: 0.1912
+Feature_6 | Traffic y: 0.1431
+Feature_9 | Emg y: 0.0890
+Feature_7 | Emg car_id: 0.0559
+Feature_4 | Traffic car_id: 0.0265
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  5.882 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  47.368 total instances:  38
+Act3 Accuracy:  83.333 total instances:  60
+Act4 Accuracy:  40.541 total instances:  37
+Action accuracy: 58.128
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2828
+Feature_5 | Traffic x: 0.1985
+Feature_8 | Emg x: 0.1839
+Feature_6 | Traffic y: 0.1402
+Feature_9 | Emg y: 0.0773
+Feature_7 | Emg car_id: 0.0690
+Feature_4 | Traffic car_id: 0.0484
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.286 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  28.205 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 51.232
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.843999999999994  average accuracy on this split
+N_ESTIMATORS:  100
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2998
+Feature_5 | Traffic x: 0.2768
+Feature_7 | Emg car_id: 0.1993
+Feature_9 | Emg y: 0.1203
+Feature_3 | Ego y: 0.0593
+Feature_6 | Traffic y: 0.0297
+Feature_4 | Traffic car_id: 0.0148
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  73.529 total instances:  34
+Act2 Accuracy:  30.769 total instances:  39
+Act3 Accuracy:  69.492 total instances:  59
+Act4 Accuracy:  21.622 total instances:  37
+Action accuracy: 42.365
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3207
+Feature_5 | Traffic x: 0.2545
+Feature_7 | Emg car_id: 0.1587
+Feature_3 | Ego y: 0.1339
+Feature_9 | Emg y: 0.0860
+Feature_6 | Traffic y: 0.0298
+Feature_4 | Traffic car_id: 0.0165
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  68.421 total instances:  38
+Act3 Accuracy:  68.333 total instances:  60
+Act4 Accuracy:  18.919 total instances:  37
+Action accuracy: 36.453
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3322
+Feature_5 | Traffic x: 0.2401
+Feature_7 | Emg car_id: 0.1382
+Feature_9 | Emg y: 0.1283
+Feature_3 | Ego y: 0.1069
+Feature_6 | Traffic y: 0.0378
+Feature_4 | Traffic car_id: 0.0164
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  17.949 total instances:  39
+Act3 Accuracy:  77.966 total instances:  59
+Act4 Accuracy:  0.000 total instances:  37
+Action accuracy: 41.379
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  40.065666666666665  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2911
+Feature_5 | Traffic x: 0.2282
+Feature_3 | Ego y: 0.1529
+Feature_7 | Emg car_id: 0.1066
+Feature_6 | Traffic y: 0.0832
+Feature_4 | Traffic car_id: 0.0696
+Feature_9 | Emg y: 0.0683
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  84.746 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 51.232
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.3204
+Feature_8 | Emg x: 0.2577
+Feature_3 | Ego y: 0.1671
+Feature_7 | Emg car_id: 0.0911
+Feature_6 | Traffic y: 0.0673
+Feature_9 | Emg y: 0.0626
+Feature_4 | Traffic car_id: 0.0338
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  2.941 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  42.105 total instances:  38
+Act3 Accuracy:  51.667 total instances:  60
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 47.291
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2742
+Feature_5 | Traffic x: 0.2127
+Feature_3 | Ego y: 0.1805
+Feature_7 | Emg car_id: 0.1306
+Feature_9 | Emg y: 0.1105
+Feature_6 | Traffic y: 0.0630
+Feature_4 | Traffic car_id: 0.0284
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  67.797 total instances:  59
+Act4 Accuracy:  21.622 total instances:  37
+Action accuracy: 46.798
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  48.440333333333335  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2635
+Feature_8 | Emg x: 0.2396
+Feature_3 | Ego y: 0.1824
+Feature_6 | Traffic y: 0.1014
+Feature_9 | Emg y: 0.0826
+Feature_7 | Emg car_id: 0.0822
+Feature_4 | Traffic car_id: 0.0483
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  30.769 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 54.187
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2509
+Feature_8 | Emg x: 0.2116
+Feature_5 | Traffic x: 0.2061
+Feature_6 | Traffic y: 0.0925
+Feature_7 | Emg car_id: 0.0908
+Feature_9 | Emg y: 0.0838
+Feature_4 | Traffic car_id: 0.0644
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  85.294 total instances:  34
+Act2 Accuracy:  44.737 total instances:  38
+Act3 Accuracy:  80.000 total instances:  60
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 51.232
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2438
+Feature_8 | Emg x: 0.2325
+Feature_5 | Traffic x: 0.2248
+Feature_6 | Traffic y: 0.0974
+Feature_7 | Emg car_id: 0.0930
+Feature_9 | Emg y: 0.0735
+Feature_4 | Traffic car_id: 0.0350
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  2.857 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  48.718 total instances:  39
+Act3 Accuracy:  81.356 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 57.635
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.351333333333336  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2593
+Feature_5 | Traffic x: 0.2199
+Feature_8 | Emg x: 0.2036
+Feature_6 | Traffic y: 0.1282
+Feature_7 | Emg car_id: 0.0731
+Feature_9 | Emg y: 0.0699
+Feature_4 | Traffic car_id: 0.0459
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.824 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  48.718 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  40.541 total instances:  37
+Action accuracy: 58.128
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2611
+Feature_5 | Traffic x: 0.2238
+Feature_8 | Emg x: 0.1906
+Feature_9 | Emg y: 0.1135
+Feature_6 | Traffic y: 0.1088
+Feature_7 | Emg car_id: 0.0630
+Feature_4 | Traffic car_id: 0.0392
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  17.647 total instances:  34
+Act1 Accuracy:  88.235 total instances:  34
+Act2 Accuracy:  34.211 total instances:  38
+Act3 Accuracy:  85.000 total instances:  60
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 57.635
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2750
+Feature_8 | Emg x: 0.2045
+Feature_5 | Traffic x: 0.1986
+Feature_6 | Traffic y: 0.1076
+Feature_9 | Emg y: 0.0800
+Feature_7 | Emg car_id: 0.0777
+Feature_4 | Traffic car_id: 0.0567
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.286 total instances:  35
+Act1 Accuracy:  84.848 total instances:  33
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 51.724
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.829  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2984
+Feature_8 | Emg x: 0.2046
+Feature_5 | Traffic x: 0.1925
+Feature_6 | Traffic y: 0.1213
+Feature_9 | Emg y: 0.0916
+Feature_7 | Emg car_id: 0.0592
+Feature_4 | Traffic car_id: 0.0325
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  17.647 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  79.661 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 58.128
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.3171
+Feature_5 | Traffic x: 0.1999
+Feature_8 | Emg x: 0.1596
+Feature_6 | Traffic y: 0.1302
+Feature_9 | Emg y: 0.0862
+Feature_7 | Emg car_id: 0.0549
+Feature_4 | Traffic car_id: 0.0522
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  50.000 total instances:  38
+Act3 Accuracy:  73.333 total instances:  60
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 54.187
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2676
+Feature_8 | Emg x: 0.2085
+Feature_5 | Traffic x: 0.1996
+Feature_6 | Traffic y: 0.1362
+Feature_9 | Emg y: 0.0851
+Feature_7 | Emg car_id: 0.0649
+Feature_4 | Traffic car_id: 0.0381
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  5.714 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  67.797 total instances:  59
+Act4 Accuracy:  48.649 total instances:  37
+Action accuracy: 53.202
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.172333333333334  average accuracy on this split
+N_ESTIMATORS:  150
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2916
+Feature_5 | Traffic x: 0.2356
+Feature_9 | Emg y: 0.1829
+Feature_7 | Emg car_id: 0.1516
+Feature_3 | Ego y: 0.0708
+Feature_6 | Traffic y: 0.0494
+Feature_4 | Traffic car_id: 0.0181
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  61.538 total instances:  39
+Act3 Accuracy:  69.492 total instances:  59
+Act4 Accuracy:  16.216 total instances:  37
+Action accuracy: 34.975
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3020
+Feature_5 | Traffic x: 0.2591
+Feature_7 | Emg car_id: 0.1617
+Feature_3 | Ego y: 0.1271
+Feature_9 | Emg y: 0.0776
+Feature_6 | Traffic y: 0.0611
+Feature_4 | Traffic car_id: 0.0116
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  60.526 total instances:  38
+Act3 Accuracy:  75.000 total instances:  60
+Act4 Accuracy:  5.405 total instances:  37
+Action accuracy: 34.483
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3191
+Feature_5 | Traffic x: 0.2467
+Feature_7 | Emg car_id: 0.1711
+Feature_3 | Ego y: 0.1217
+Feature_9 | Emg y: 0.0888
+Feature_6 | Traffic y: 0.0444
+Feature_4 | Traffic car_id: 0.0082
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  0.000 total instances:  33
+Act2 Accuracy:  25.641 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 33.990
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  34.48266666666667  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2640
+Feature_5 | Traffic x: 0.2283
+Feature_3 | Ego y: 0.1719
+Feature_7 | Emg car_id: 0.1138
+Feature_9 | Emg y: 0.1014
+Feature_6 | Traffic y: 0.0850
+Feature_4 | Traffic car_id: 0.0356
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  62.712 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 43.842
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2651
+Feature_5 | Traffic x: 0.2482
+Feature_3 | Ego y: 0.1533
+Feature_7 | Emg car_id: 0.1096
+Feature_9 | Emg y: 0.0980
+Feature_6 | Traffic y: 0.0833
+Feature_4 | Traffic car_id: 0.0425
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  36.842 total instances:  38
+Act3 Accuracy:  75.000 total instances:  60
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 51.232
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2825
+Feature_5 | Traffic x: 0.2736
+Feature_3 | Ego y: 0.1801
+Feature_7 | Emg car_id: 0.1092
+Feature_9 | Emg y: 0.0648
+Feature_6 | Traffic y: 0.0521
+Feature_4 | Traffic car_id: 0.0377
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  69.492 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 48.276
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  47.78333333333333  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2407
+Feature_3 | Ego y: 0.2318
+Feature_5 | Traffic x: 0.2272
+Feature_6 | Traffic y: 0.0954
+Feature_7 | Emg car_id: 0.0894
+Feature_9 | Emg y: 0.0770
+Feature_4 | Traffic car_id: 0.0385
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.824 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 55.665
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2528
+Feature_8 | Emg x: 0.2215
+Feature_3 | Ego y: 0.2196
+Feature_9 | Emg y: 0.0985
+Feature_6 | Traffic y: 0.0871
+Feature_7 | Emg car_id: 0.0784
+Feature_4 | Traffic car_id: 0.0421
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  52.632 total instances:  38
+Act3 Accuracy:  83.333 total instances:  60
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 56.158
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2334
+Feature_5 | Traffic x: 0.2217
+Feature_8 | Emg x: 0.2181
+Feature_6 | Traffic y: 0.1115
+Feature_7 | Emg car_id: 0.0908
+Feature_9 | Emg y: 0.0652
+Feature_4 | Traffic car_id: 0.0594
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  84.848 total instances:  33
+Act2 Accuracy:  41.026 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  48.649 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.501000000000005  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2332
+Feature_3 | Ego y: 0.2328
+Feature_5 | Traffic x: 0.2183
+Feature_6 | Traffic y: 0.1098
+Feature_9 | Emg y: 0.0863
+Feature_7 | Emg car_id: 0.0737
+Feature_4 | Traffic car_id: 0.0459
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.824 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  54.054 total instances:  37
+Action accuracy: 58.621
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2525
+Feature_5 | Traffic x: 0.2137
+Feature_8 | Emg x: 0.1984
+Feature_6 | Traffic y: 0.1297
+Feature_9 | Emg y: 0.0899
+Feature_7 | Emg car_id: 0.0790
+Feature_4 | Traffic car_id: 0.0368
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  44.737 total instances:  38
+Act3 Accuracy:  85.000 total instances:  60
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 56.650
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2969
+Feature_5 | Traffic x: 0.2119
+Feature_8 | Emg x: 0.1901
+Feature_6 | Traffic y: 0.1161
+Feature_9 | Emg y: 0.0715
+Feature_7 | Emg car_id: 0.0627
+Feature_4 | Traffic car_id: 0.0509
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.429 total instances:  35
+Act1 Accuracy:  90.909 total instances:  33
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 51.724
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.665  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2883
+Feature_5 | Traffic x: 0.2046
+Feature_8 | Emg x: 0.1865
+Feature_6 | Traffic y: 0.1257
+Feature_9 | Emg y: 0.0957
+Feature_7 | Emg car_id: 0.0536
+Feature_4 | Traffic car_id: 0.0455
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  69.492 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 53.695
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.3114
+Feature_5 | Traffic x: 0.1973
+Feature_8 | Emg x: 0.1810
+Feature_6 | Traffic y: 0.1437
+Feature_9 | Emg y: 0.0882
+Feature_7 | Emg car_id: 0.0495
+Feature_4 | Traffic car_id: 0.0289
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  29.412 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  36.842 total instances:  38
+Act3 Accuracy:  66.667 total instances:  60
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 53.695
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2917
+Feature_8 | Emg x: 0.2073
+Feature_5 | Traffic x: 0.2003
+Feature_6 | Traffic y: 0.1137
+Feature_9 | Emg y: 0.0834
+Feature_7 | Emg car_id: 0.0664
+Feature_4 | Traffic car_id: 0.0372
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  17.143 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  48.649 total instances:  37
+Action accuracy: 60.591
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.99366666666666  average accuracy on this split
+N_ESTIMATORS:  200
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2947
+Feature_5 | Traffic x: 0.2748
+Feature_7 | Emg car_id: 0.1523
+Feature_9 | Emg y: 0.0993
+Feature_3 | Ego y: 0.0927
+Feature_6 | Traffic y: 0.0679
+Feature_4 | Traffic car_id: 0.0182
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  79.412 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  81.356 total instances:  59
+Act4 Accuracy:  18.919 total instances:  37
+Action accuracy: 47.783
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3174
+Feature_5 | Traffic x: 0.2648
+Feature_7 | Emg car_id: 0.1645
+Feature_3 | Ego y: 0.1069
+Feature_9 | Emg y: 0.0921
+Feature_6 | Traffic y: 0.0411
+Feature_4 | Traffic car_id: 0.0132
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  57.895 total instances:  38
+Act3 Accuracy:  75.000 total instances:  60
+Act4 Accuracy:  5.405 total instances:  37
+Action accuracy: 33.990
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3311
+Feature_5 | Traffic x: 0.2290
+Feature_7 | Emg car_id: 0.2076
+Feature_9 | Emg y: 0.1120
+Feature_3 | Ego y: 0.0906
+Feature_6 | Traffic y: 0.0214
+Feature_4 | Traffic car_id: 0.0082
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  0.000 total instances:  39
+Act3 Accuracy:  59.322 total instances:  59
+Act4 Accuracy:  40.541 total instances:  37
+Action accuracy: 39.901
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  40.558  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3064
+Feature_5 | Traffic x: 0.2417
+Feature_3 | Ego y: 0.1389
+Feature_7 | Emg car_id: 0.1074
+Feature_9 | Emg y: 0.0914
+Feature_6 | Traffic y: 0.0671
+Feature_4 | Traffic car_id: 0.0471
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  67.797 total instances:  59
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 47.783
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2867
+Feature_5 | Traffic x: 0.2381
+Feature_3 | Ego y: 0.2007
+Feature_7 | Emg car_id: 0.1079
+Feature_9 | Emg y: 0.0719
+Feature_6 | Traffic y: 0.0606
+Feature_4 | Traffic car_id: 0.0341
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  34.211 total instances:  38
+Act3 Accuracy:  65.000 total instances:  60
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 44.828
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2547
+Feature_8 | Emg x: 0.2474
+Feature_3 | Ego y: 0.1651
+Feature_9 | Emg y: 0.1152
+Feature_7 | Emg car_id: 0.1034
+Feature_6 | Traffic y: 0.0844
+Feature_4 | Traffic car_id: 0.0298
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  49.097  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2365
+Feature_3 | Ego y: 0.2299
+Feature_5 | Traffic x: 0.2263
+Feature_9 | Emg y: 0.0931
+Feature_6 | Traffic y: 0.0869
+Feature_7 | Emg car_id: 0.0800
+Feature_4 | Traffic car_id: 0.0473
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  94.118 total instances:  34
+Act2 Accuracy:  48.718 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 57.143
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2471
+Feature_5 | Traffic x: 0.2197
+Feature_3 | Ego y: 0.2163
+Feature_7 | Emg car_id: 0.1117
+Feature_6 | Traffic y: 0.0954
+Feature_9 | Emg y: 0.0693
+Feature_4 | Traffic car_id: 0.0405
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  5.882 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  39.474 total instances:  38
+Act3 Accuracy:  73.333 total instances:  60
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 52.217
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2410
+Feature_3 | Ego y: 0.2226
+Feature_8 | Emg x: 0.2139
+Feature_6 | Traffic y: 0.1103
+Feature_9 | Emg y: 0.0883
+Feature_7 | Emg car_id: 0.0766
+Feature_4 | Traffic car_id: 0.0472
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  35.897 total instances:  39
+Act3 Accuracy:  94.915 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 56.158
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.172666666666665  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2656
+Feature_5 | Traffic x: 0.2461
+Feature_8 | Emg x: 0.1813
+Feature_6 | Traffic y: 0.1207
+Feature_9 | Emg y: 0.0688
+Feature_7 | Emg car_id: 0.0613
+Feature_4 | Traffic car_id: 0.0562
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  45.946 total instances:  37
+Action accuracy: 54.680
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2742
+Feature_8 | Emg x: 0.2301
+Feature_5 | Traffic x: 0.1849
+Feature_9 | Emg y: 0.1028
+Feature_6 | Traffic y: 0.0987
+Feature_7 | Emg car_id: 0.0671
+Feature_4 | Traffic car_id: 0.0422
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  14.706 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  39.474 total instances:  38
+Act3 Accuracy:  80.000 total instances:  60
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 58.128
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2647
+Feature_8 | Emg x: 0.2123
+Feature_5 | Traffic x: 0.2116
+Feature_6 | Traffic y: 0.1173
+Feature_9 | Emg y: 0.0848
+Feature_7 | Emg car_id: 0.0677
+Feature_4 | Traffic car_id: 0.0416
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.571 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  77.966 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 53.695
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.501  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2947
+Feature_5 | Traffic x: 0.2082
+Feature_8 | Emg x: 0.1886
+Feature_6 | Traffic y: 0.1270
+Feature_9 | Emg y: 0.0793
+Feature_7 | Emg car_id: 0.0606
+Feature_4 | Traffic car_id: 0.0416
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  82.353 total instances:  34
+Act2 Accuracy:  48.718 total instances:  39
+Act3 Accuracy:  76.271 total instances:  59
+Act4 Accuracy:  51.351 total instances:  37
+Action accuracy: 56.650
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2830
+Feature_8 | Emg x: 0.1957
+Feature_5 | Traffic x: 0.1935
+Feature_6 | Traffic y: 0.1260
+Feature_9 | Emg y: 0.1011
+Feature_4 | Traffic car_id: 0.0516
+Feature_7 | Emg car_id: 0.0491
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  17.647 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  34.211 total instances:  38
+Act3 Accuracy:  76.667 total instances:  60
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 55.665
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.3118
+Feature_5 | Traffic x: 0.1987
+Feature_8 | Emg x: 0.1726
+Feature_6 | Traffic y: 0.1351
+Feature_9 | Emg y: 0.0923
+Feature_7 | Emg car_id: 0.0600
+Feature_4 | Traffic car_id: 0.0294
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.571 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  23.077 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  32.432 total instances:  37
+Action accuracy: 48.768
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  53.69433333333333  average accuracy on this split
+N_ESTIMATORS:  250
+DEPTH:  1
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3311
+Feature_5 | Traffic x: 0.2363
+Feature_7 | Emg car_id: 0.1531
+Feature_9 | Emg y: 0.1165
+Feature_3 | Ego y: 0.1131
+Feature_6 | Traffic y: 0.0349
+Feature_4 | Traffic car_id: 0.0150
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  23.077 total instances:  39
+Act3 Accuracy:  61.017 total instances:  59
+Act4 Accuracy:  24.324 total instances:  37
+Action accuracy: 43.350
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3657
+Feature_5 | Traffic x: 0.2422
+Feature_7 | Emg car_id: 0.1549
+Feature_9 | Emg y: 0.1236
+Feature_3 | Ego y: 0.0659
+Feature_6 | Traffic y: 0.0346
+Feature_4 | Traffic car_id: 0.0132
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  0.000 total instances:  34
+Act2 Accuracy:  65.789 total instances:  38
+Act3 Accuracy:  73.333 total instances:  60
+Act4 Accuracy:  16.216 total instances:  37
+Action accuracy: 36.946
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.3010
+Feature_8 | Emg x: 0.2747
+Feature_7 | Emg car_id: 0.1266
+Feature_9 | Emg y: 0.1250
+Feature_3 | Ego y: 0.1234
+Feature_6 | Traffic y: 0.0312
+Feature_4 | Traffic car_id: 0.0181
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  0.000 total instances:  33
+Act2 Accuracy:  66.667 total instances:  39
+Act3 Accuracy:  81.356 total instances:  59
+Act4 Accuracy:  5.405 total instances:  37
+Action accuracy: 37.438
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  39.24466666666667  average accuracy on this split
+DEPTH:  2
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.2666
+Feature_5 | Traffic x: 0.2276
+Feature_3 | Ego y: 0.1673
+Feature_7 | Emg car_id: 0.1436
+Feature_9 | Emg y: 0.0848
+Feature_6 | Traffic y: 0.0590
+Feature_4 | Traffic car_id: 0.0511
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  64.706 total instances:  34
+Act2 Accuracy:  28.205 total instances:  39
+Act3 Accuracy:  76.271 total instances:  59
+Act4 Accuracy:  37.838 total instances:  37
+Action accuracy: 45.320
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2792
+Feature_8 | Emg x: 0.2334
+Feature_3 | Ego y: 0.1745
+Feature_7 | Emg car_id: 0.0937
+Feature_6 | Traffic y: 0.0895
+Feature_9 | Emg y: 0.0848
+Feature_4 | Traffic car_id: 0.0448
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  39.474 total instances:  38
+Act3 Accuracy:  68.333 total instances:  60
+Act4 Accuracy:  40.541 total instances:  37
+Action accuracy: 51.232
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_8 | Emg x: 0.3100
+Feature_5 | Traffic x: 0.2635
+Feature_3 | Ego y: 0.1636
+Feature_7 | Emg car_id: 0.1085
+Feature_9 | Emg y: 0.0733
+Feature_6 | Traffic y: 0.0539
+Feature_4 | Traffic car_id: 0.0273
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  51.282 total instances:  39
+Act3 Accuracy:  59.322 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 48.768
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  48.44  average accuracy on this split
+DEPTH:  3
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2632
+Feature_8 | Emg x: 0.2185
+Feature_3 | Ego y: 0.2014
+Feature_6 | Traffic y: 0.1015
+Feature_7 | Emg car_id: 0.0755
+Feature_4 | Traffic car_id: 0.0712
+Feature_9 | Emg y: 0.0687
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  70.588 total instances:  34
+Act2 Accuracy:  33.333 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 45.813
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_5 | Traffic x: 0.2411
+Feature_8 | Emg x: 0.2346
+Feature_3 | Ego y: 0.2074
+Feature_6 | Traffic y: 0.0993
+Feature_7 | Emg car_id: 0.0930
+Feature_9 | Emg y: 0.0909
+Feature_4 | Traffic car_id: 0.0337
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  47.368 total instances:  38
+Act3 Accuracy:  81.667 total instances:  60
+Act4 Accuracy:  48.649 total instances:  37
+Action accuracy: 57.143
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2674
+Feature_8 | Emg x: 0.2086
+Feature_5 | Traffic x: 0.1996
+Feature_7 | Emg car_id: 0.0988
+Feature_9 | Emg y: 0.0899
+Feature_6 | Traffic y: 0.0886
+Feature_4 | Traffic car_id: 0.0472
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  0.000 total instances:  35
+Act1 Accuracy:  93.939 total instances:  33
+Act2 Accuracy:  46.154 total instances:  39
+Act3 Accuracy:  86.441 total instances:  59
+Act4 Accuracy:  35.135 total instances:  37
+Action accuracy: 55.665
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  52.87366666666667  average accuracy on this split
+DEPTH:  4
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2844
+Feature_5 | Traffic x: 0.2214
+Feature_8 | Emg x: 0.1990
+Feature_6 | Traffic y: 0.1114
+Feature_9 | Emg y: 0.0828
+Feature_4 | Traffic car_id: 0.0511
+Feature_7 | Emg car_id: 0.0499
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  23.529 total instances:  34
+Act1 Accuracy:  97.059 total instances:  34
+Act2 Accuracy:  38.462 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  29.730 total instances:  37
+Action accuracy: 54.187
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2494
+Feature_8 | Emg x: 0.2173
+Feature_5 | Traffic x: 0.1757
+Feature_6 | Traffic y: 0.1377
+Feature_9 | Emg y: 0.0979
+Feature_7 | Emg car_id: 0.0811
+Feature_4 | Traffic car_id: 0.0409
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  2.941 total instances:  34
+Act1 Accuracy:  91.176 total instances:  34
+Act2 Accuracy:  42.105 total instances:  38
+Act3 Accuracy:  86.667 total instances:  60
+Act4 Accuracy:  27.027 total instances:  37
+Action accuracy: 54.187
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2753
+Feature_5 | Traffic x: 0.2466
+Feature_8 | Emg x: 0.1944
+Feature_6 | Traffic y: 0.0979
+Feature_9 | Emg y: 0.0749
+Feature_7 | Emg car_id: 0.0743
+Feature_4 | Traffic car_id: 0.0367
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  8.571 total instances:  35
+Act1 Accuracy:  96.970 total instances:  33
+Act2 Accuracy:  35.897 total instances:  39
+Act3 Accuracy:  71.186 total instances:  59
+Act4 Accuracy:  56.757 total instances:  37
+Action accuracy: 55.172
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  54.51533333333333  average accuracy on this split
+DEPTH:  5
+---------------------------------------------------------------------------
+Fold 0:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2869
+Feature_8 | Emg x: 0.1891
+Feature_5 | Traffic x: 0.1872
+Feature_6 | Traffic y: 0.1417
+Feature_9 | Emg y: 0.0931
+Feature_7 | Emg car_id: 0.0606
+Feature_4 | Traffic car_id: 0.0416
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  100.000 total instances:  34
+Act2 Accuracy:  51.282 total instances:  39
+Act3 Accuracy:  83.051 total instances:  59
+Act4 Accuracy:  40.541 total instances:  37
+Action accuracy: 60.099
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 1:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.2852
+Feature_5 | Traffic x: 0.2157
+Feature_8 | Emg x: 0.1970
+Feature_6 | Traffic y: 0.1104
+Feature_9 | Emg y: 0.0959
+Feature_7 | Emg car_id: 0.0556
+Feature_4 | Traffic car_id: 0.0401
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.765 total instances:  34
+Act1 Accuracy:  79.412 total instances:  34
+Act2 Accuracy:  36.842 total instances:  38
+Act3 Accuracy:  63.333 total instances:  60
+Act4 Accuracy:  48.649 total instances:  37
+Action accuracy: 49.754
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+---------------------------------------------------------------------------
+Fold 2:
+Total datapoints: 609 || # of training data: 406 || # of test data: 203
+Important Features:
+Feature_3 | Ego y: 0.3061
+Feature_5 | Traffic x: 0.2032
+Feature_8 | Emg x: 0.1826
+Feature_6 | Traffic y: 0.1379
+Feature_9 | Emg y: 0.0784
+Feature_7 | Emg car_id: 0.0524
+Feature_4 | Traffic car_id: 0.0394
+Feature_1 | Ego car_id: 0.0000
+Feature_2 | Ego x: 0.0000
+Act0 Accuracy:  11.429 total instances:  35
+Act1 Accuracy:  100.000 total instances:  33
+Act2 Accuracy:  43.590 total instances:  39
+Act3 Accuracy:  72.881 total instances:  59
+Act4 Accuracy:  43.243 total instances:  37
+Action accuracy: 55.665
+Total action data points: 203
+# of Test datapoints:203 count of datapoints:203 || number of test files:20
+||||||||  55.172666666666665  average accuracy on this split
+60.591 % accuracy n_estimator:  150 DEPTH:  5
+609
+Elapsed time to run the script: 926.759 seconds or 15.45 minutes
