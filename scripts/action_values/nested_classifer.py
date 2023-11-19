@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import KFold, StratifiedKFold
 import gymnasium as gym
 import glob, time
+from sklearn.metrics import f1_score
 
 
 #how many frames is the emg actually present in the obs array
@@ -45,7 +46,7 @@ c = 0
 counters = [0, 0, 0, 0, 0]
 def load_files(file_path):
     global c
-    max = 1000
+    max = 107
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
             c+=1
@@ -58,7 +59,7 @@ def load_files(file_path):
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
                 elif (d['man_act'] == 1):
-                    if(counters[1] <= 100):
+                    if(counters[1] <= max):
                         counters[1] +=1
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
@@ -207,8 +208,8 @@ def second_classification(model, input_data, gt):
    
     v = predict(model, input_data)
     v = v[0]
-    if v == gt: return True
-    else: return False
+    if v == gt: return True, v
+    else: return False, v
 
 
 def conver_gt(act):
@@ -221,6 +222,15 @@ def multi_class_accuracy(binary, zero_two, test_obs, test_act):
     acc,acc2 = 0,0 
     total, total2 =0,0 #total classifiier 1 and classifier 2
     count = 0
+    y_true = []
+    y_pred = []
+    y_true2 = []
+    y_pred2=[]
+    nested_true = []
+    nested_pred = []
+    nested_acc = 0
+    nested_total = 0
+    v2 = -5
     f = open("test.txt", "w+")
     for i, n in enumerate(test_obs):
         count+=1
@@ -232,19 +242,37 @@ def multi_class_accuracy(binary, zero_two, test_obs, test_act):
         f.write("Model Prediction: " + str(v) + ", ")
         gt = test_act[i] # either 0,1,2
         binary_gt = conver_gt(gt) # 0 or 1
+        y_true.append(binary_gt)
+        y_pred.append(v)
         if v == binary_gt: acc+=1  
         if (v == 0 and gt !=1):
+            y_true2.append(gt)
             total2+=1
-            accurate = second_classification(zero_two, data, gt) #match or no match 
+            accurate, v2 = second_classification(zero_two, data, gt) #match or no match 
+            y_pred2.append(v2)
             if (accurate): acc2+=1
+            
 
-    acc =( acc / total ) * 100 
-    acc2 =( acc2 / total2 ) * 100
+        #nested 
+        nested_total += 1 
+        nested_true.append(gt)
+        if gt == 1: nested_pred.append(v)
+        elif gt !=1: nested_pred.append(v2)
+
+        if gt == 1 and v ==1: nested_acc+=1
+        elif gt == v2: nested_acc+=1 #0 or 2 
+
+    if nested_total !=0: nested_acc = (nested_acc / nested_total) *100 
+    if total !=0: acc =( acc / total ) * 100 
+    if total2 !=0: acc2 =( acc2 / total2 ) * 100 
     avg = ((acc) + (acc2)) / 2
     acc =  "{:.3f}".format(acc)
-    acc2= "{:.3f}".format(acc2)
-    print("Action accuracy: ", acc,acc2)
-    return acc, acc2, avg
+    acc2 = "{:.3f}".format(acc2) 
+    print("Action accuracy: ", acc,acc2, nested_acc) 
+    f_score = f1_score(y_true, y_pred)
+    f_score2 = f1_score(y_true2, y_pred2, pos_label=2)
+    nested_f1 = f1_score(nested_true, nested_pred, average='macro')  
+    return acc, acc2, avg, f_score, f_score2, nested_acc, nested_f1 
 
 def accuracy_check(binary, obs_final, act, c):
     assert len(obs_final) == len(act) #ensure # of obs == # of action values in test files
@@ -429,20 +457,25 @@ def two_class(obs, act):
 def k_validation(obs, act):
     skf = StratifiedKFold(n_splits=3, random_state=None, shuffle=True)
     skf.get_n_splits(obs,act)
-    
   
     num_trees = [1,5,10,50,100,150,200,250]
     max_depth = [1,2,3,4,5]
+
    
-    a,a2 = 0,0
-    estimators,e2 = 0,0
-    d,d2 = 0,0
+    t = 0
+    final_f = 0
+    final_f2 = 0
+    final_f3 = 0
+    a,a2,a3 = 0,0,0
+    estimators,e2,e3 = 0,0,0
+    d,d2 ,d3= 0,0,0
 
     for p in num_trees: 
         print("N_ESTIMATORS: ", p)
         for md in max_depth:
             print("DEPTH: ", md)
             avg= 0
+            t+=1
             for i, (train_index, test_index) in enumerate(skf.split(obs,act)): # go through each fold in kfold split
                 print("---------------------------------------------------------------------------")
                 print(f"Fold {i}:")
@@ -478,9 +511,9 @@ def k_validation(obs, act):
                 important_features(zero_two_model)
                 c=20
                # r1 = accuracy_check(binary_model,zero_two_model, test_data, test_action,c)
-                r,r2,avg = multi_class_accuracy(binary_model, zero_two_model, test_data, test_action)
-
-               
+                r,r2,avg, f_one, f_two, r3, nested_f = multi_class_accuracy(binary_model, zero_two_model, test_data, test_action)
+            
+            
                 if(float(r)> float(a)):
                     estimators = p
                     d = md
@@ -490,8 +523,18 @@ def k_validation(obs, act):
                     e2 = p
                     d2 = md
                     a2 = r2
+                if((r3) > a3):
+                    e3 = p
+                    d3 = md
+                    a3 = r3
             print("|||||||| ", (avg)/3, " average accuracy on this split")
-    return a,  estimators ,d, a2,e2,d2
+            final_f += f_one
+            final_f2 += f_two
+            final_f3 += nested_f
+    final_f = final_f / t
+    final_f2 = final_f2 / t
+    final_f3 = final_f3 / t
+    return a,  estimators ,d, a2,e2,d2, final_f, final_f2, a3, e3, d3, final_f3
 
 if __name__ == '__main__':
     start_time = time.time()
@@ -526,13 +569,15 @@ if __name__ == '__main__':
     #important_features(model) #extract and print important features of model 
     
     best = []
-    a, estimator, md,a2,e2,d2 = k_validation(obs_data, action_data)          
+    a, estimator, md,a2,e2,d2, f_score, f_score2, a3, e3, d3, f_3 = k_validation(obs_data, action_data)   
     print(a,"% accuracy","n_estimator: ",estimator,"DEPTH: ",md)  
     print(a2,"% accuracy","n_estimator: ",e2,"DEPTH: ",d2)  
+    print(a3,"% Nested accuracy","n_estimator: ",e3,"DEPTH: ",d3)  
     print(len(obs_data))
     final = (float(a) + float(a2)) / 2
     print("Final accuracy", final)
-    
+    f_avg = sum([f_score, f_score2]) / 2
+    print("F1_Score", f_score, f_score2,f_avg, f_3)
     #obs_final, act,c = open_test_files()  
     # obs_final = obs_data
     # act = action_data
