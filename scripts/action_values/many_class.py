@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import KFold, StratifiedKFold
 import gymnasium as gym
 import glob, time
+from sklearn.metrics import f1_score
 
 
 #how many frames is the emg actually present in the obs array
@@ -43,8 +44,8 @@ action_data = []
 c = 0
 counters = [0, 0, 0, 0, 0]
 def load_files(file_path):
-    global c
-    max = 1000
+    global c    
+    max = 63
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
             c+=1
@@ -57,7 +58,7 @@ def load_files(file_path):
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
                 elif (d['man_act'] == 1):
-                    if(counters[1] <= 100):
+                    if(counters[1] <= max):
                         counters[1] +=1
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
@@ -67,7 +68,7 @@ def load_files(file_path):
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
                 elif (d['man_act'] == 3):
-                    if(counters[3] <= 105):
+                    if(counters[3] <= max):
                         counters[3] +=1
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
@@ -203,6 +204,8 @@ def open_test_files():
 def accuracy_check(model, obs_final, act, c):
     assert len(obs_final) == len(act) #ensure # of obs == # of action values in test files
     #accuracy check
+    y_true = []
+    y_pred = []
     count = 0
     f1,f1t = 0,0
     f2,f2t = 0,0
@@ -221,6 +224,8 @@ def accuracy_check(model, obs_final, act, c):
         v = v[0]
         f.write("Model Prediction: " + str(v) + ", ")
         gt = act[i]
+        y_true.append(gt)
+        y_pred.append(v)
         if gt == 0: 
             f0t+=1
             if(gt == v):
@@ -281,7 +286,9 @@ def accuracy_check(model, obs_final, act, c):
     print("Action accuracy: " + val)
     print("Total action data points: " + str(action_total))
     print("# of Test datapoints:" + str(len(obs_final)) +  " count of datapoints:" + str(count) + " || number of test files:" + str(c))
-    return val
+    score = f1_score(y_true, y_pred, average='micro')
+    print("F1 Score: ", score)
+    return val, score
 
 def reorder(obs_data): #ego, emg, trafic -> 0,1,2
     new_list = []
@@ -363,8 +370,8 @@ def k_validation(obs, act):
   
     num_trees = [1,5,10,50,100,150,200,250]
     max_depth = [1,2,3,4,5]
-    
-   
+    total = len(num_trees) * len(max_depth)
+    avg_f_one = 0
     a = 0
     estimators = 0
     d = 0
@@ -395,14 +402,18 @@ def k_validation(obs, act):
                 model = trainer(x, md, train_data, train_action)
                 important_features(model)
                 c=20
-                r = accuracy_check(model, test_data, test_action,c)
+                r,f_one_score = accuracy_check(model, test_data, test_action,c)
+               
                 avg+=float(r)
                 if(float(r)> float(a)):
                     estimators = p
                     d = md
                     a = r
             print("|||||||| ", (avg)/3, " average accuracy on this split")
-    return a,  estimators ,d
+            avg_f_one+= f_one_score
+    
+    avg_f_one = avg_f_one / total
+    return a,  estimators ,d, avg_f_one
 
 if __name__ == '__main__':
     start_time = time.time()
@@ -434,8 +445,10 @@ if __name__ == '__main__':
     #model = trainer(n, m,obs_data, action_data)  #train model based on obs and action val data
     #important_features(model) #extract and print important features of model 
     best = []
-    a, estimator, md = k_validation(obs_data, action_data)          
+    a, estimator, md, f_score= k_validation(obs_data, action_data)   
+    f_score =  "{:.3f}".format(f_score)         
     print(a,"% accuracy","n_estimator: ",estimator,"DEPTH: ",md)  
+    print("F1_score", f_score)
     print(len(obs_data))
     
     obs_final, act,c = open_test_files()  
