@@ -45,7 +45,7 @@ c = 0
 counters = [0, 0, 0, 0, 0]
 def load_files(file_path):
     global c    
-    max = 63
+    max = 107
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
             c+=1
@@ -368,8 +368,10 @@ def k_validation(obs, act):
     skf.get_n_splits(obs,act)
 
   
-    num_trees = [1,5,10,50,100,150,200,250]
-    max_depth = [1,2,3,4,5]
+    # num_trees = [1,5,10,50,100,150,200,250]
+    # max_depth = [1,2,3,4,5]
+    num_trees = [100]
+    max_depth = [None]
     total = len(num_trees) * len(max_depth)
     avg_f_one = 0
     a = 0

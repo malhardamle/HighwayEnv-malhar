@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import KFold, StratifiedKFold
 import gymnasium as gym
 import glob, time
+from sklearn.metrics import f1_score
 
 
 #how many frames is the emg actually present in the obs array
@@ -21,6 +22,7 @@ def emg_presence(obs):
     v = (c/t)*100
     v = "{:.2f}".format(v)
     print(f"EMG is in {c} frames! {v} %")
+
 
 
 def training_stats(action):
@@ -44,7 +46,7 @@ c = 0
 counters = [0, 0, 0, 0, 0]
 def load_files(file_path):
     global c
-    max = 10000
+    max = 107
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
             c+=1
@@ -57,7 +59,7 @@ def load_files(file_path):
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
                 elif (d['man_act'] == 1):
-                    if(counters[1] <= 100):
+                    if(counters[1] <= max):
                         counters[1] +=1
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
@@ -142,15 +144,14 @@ def predict(final_model, obs):
     return predict_action
 
 
-def open_test_files():
+def open_test_files(file_path):
     c = 0
     obs = []
     act = []
     obs_final = []
-    max =10
+    max =47
     #open test episdoes and extract obs data
     count = [0,0,0,0,0]
-    file_path = ".." + "/training_data/validate/"
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
             c+=1
@@ -163,7 +164,7 @@ def open_test_files():
                         obs.append(o)
                         act.append((d['man_act']))
                 elif (d['man_act'] == 1):
-                    if(count[1] <= max*4):
+                    if(count[1] <= max):
                         count[1] +=1
                         obs.append(o)
                         act.append((d['man_act']))
@@ -184,104 +185,74 @@ def open_test_files():
                         act.append((d['man_act']))
             # obs.extend([d['obs'] for d in data])
             # act.extend([d['man_act'] for d in data])
-    training_stats(act)
-    act = binary_con(act)
-    training_stats(act)
-    obs = reorder(obs) #standardize order in test data
-    obs = remove_presence(obs) #remove all presence values in obs test data
+    
+ 
+    return obs, act, c
 
-    # fix sub list within list issue
-    for x in obs:
+
+def clean_test_obs (input):
+    obs_final = []
+       # fix sub list within list issue
+    for x in input:
         temp = []
         test = x.tolist()
         for x in test:
             temp.extend(x)
         obs_final.append(temp)
     obs_final = np.array(obs_final)
-    return obs_final, act, c
+    return obs_final
 
-def accuracy_check(model, obs_final, act, c):
-    assert len(obs_final) == len(act) #ensure # of obs == # of action values in test files
-    #accuracy check
-    count = 0
-    f1,f1t = 0,0
-    f2,f2t = 0,0
-    f3, f3t = 0,0
-    f4 , f4t= 0,0
-    f0, f0t = 0,0
-    action_total = 0
-    action_correct = 0
-    f = open("test.txt", "w+")
-    for i, n in enumerate(obs_final): 
-        count+=1
-        action_total+=1
+
+def second_classification(model, input_data, gt):
+   
+    v = predict(model, input_data)
+    v = v[0]
+    if v == gt: return True, v
+    else: return False, v
+
+
+def conver_gt(act):
+    if act == 0 or act == 2: 
+        return 0
+    else: return act
+
+
+def final_accuracy(binary, lane, test_obs, test_act):
+    acc,t = 0,0
+    c =0
+    y_true= []
+    y_pred = []
+    f = open("nested_results.txt", "w+")
+    for i, n in enumerate(test_obs):
+        c+=1
+        t+=1
         data = n
         data = data[None]
-        v = predict(model,data)
+        v = predict(binary, data)
         v = v[0]
-        f.write("Model Prediction: " + str(v) + ", ")
-        gt = act[i]
-        if gt == 0: 
-            f0t+=1
-            if(gt == v):
-                f0+=1
-        elif gt == 1: 
-            f1t+=1
-            if(gt == v):
-                f1+=1
-        elif gt == 2: 
-            f2t+=1
-            if(gt == v):
-                f2+=1
-        elif gt == 3: 
-            f3t+=1
-            if(gt == v):
-                f3+=1
-        elif gt == 4: 
-            f4t+=1
-            if(gt == v):
-                f4+=1
-        f.write("GT: " +str(gt)+"\n")
-        if (gt == v):
-            action_correct+=1
+        f.write("Model prediction: " +  str(v) + ", ")
+        gt = test_act[i]
+        #binary_gt = conver_gt(gt)
+        y_true.append(gt)
+        if (gt == 1 and v == 1):
+            acc+=1
+            
 
-    action_acc = (action_correct / action_total) * 100
-    if f0t == 0: f0a = 0
-    else: f0a = (f0/f0t)*100
-    if f1t == 0: f1a = 0
-    else: f1a = (f1/f1t)*100
-    if f2t == 0: f2a = 0
-    else: f2a = (f2 / f2t) * 100
-    if f3t == 0: f3a = 0
-    else: f3a = (f3 / f3t) * 100
-    if f4t == 0: f4a = 0
-    else: f4a = ((f4/f4t) * 100)
-   
-    f0a= "{:.3f}".format(f0a)
-    f1a= "{:.3f}".format(f1a)
-    f2a= "{:.3f}".format(f2a)
-    f3a= "{:.3f}".format(f3a)
-    f4a= "{:.3f}".format(f4a)
+        if (v == 0 and gt !=1):
+            accurate, v2 = second_classification(lane, data, gt)
+            if accurate: acc+=1
+      
+        if gt ==1: y_pred.append(v)
+        else: y_pred.append(v2)
 
-    if (f0t!=0): print("Act0 Accuracy: ",str(f0a),  "total instances: ", f0t)
-    else: print("Act0 Accuracy: N/A", "total instances: ", f0t)
 
-    if (f1t!=0): print("Act1 Accuracy: ", str(f1a),  "total instances: ", f1t)
-    else: print("Act1 Accuracy: N/A", "total instances: ", f1t)
+    final = (acc / t ) * 100
 
-    if(f2t !=0): print("Act2 Accuracy: ", str(f2a),  "total instances: ", f2t)   
-    else: print("Act2 Accuracy: N/A", "total instances: ", f2t)
+    score = f1_score(y_true, y_pred, average='macro')
+    print("Final accuracy and F1_score: ", final, score)
 
-    # if(f3t!=0):print("Act3 Accuracy: ", str(f3a),  "total instances: ", f3t)
-    # else: print("Act2 Accuracy: N/A", "total instances: ", f2t)
-    
-    # if(f4t!=0):print("Act4 Accuracy: ", str(f4a),  "total instances: ", f4t)
-    # else: print("Act2 Accuracy: N/A", "total instances: ", f2t)
-    val = "{:.3f}".format(action_acc)
-    print("Action accuracy: " + val)
-    print("Total action data points: " + str(action_total))
-    print("# of Test datapoints:" + str(len(obs_final)) +  " count of datapoints:" + str(count) + " || number of test files:" + str(c))
-    return val
+
+
 
 def reorder(obs_data): #ego, emg, trafic -> 0,1,2
     new_list = []
@@ -300,29 +271,37 @@ def reorder(obs_data): #ego, emg, trafic -> 0,1,2
     return new_list
 
 
-def binary_con(action_data):
+def binary_con(obs, act):
     new_list = []
-    for x in action_data:
+    new_obs = []
+    for i, x in enumerate(act):
         if x!=1:
             new_list.append(0)
+            new_obs.append(obs[i])
         else: 
             new_list.append(1)
-    return new_list
+            new_obs.append(obs[i])
+    return new_obs, new_list
 
-def three_class(obs_data, action_data):
+
+def remove_idle(obs_data, action_data):
+    new_list = []
     new_obs = []
-    new_act = []
-    for i, n in enumerate(action_data): 
-        if(n !=3 and n!=4):
+    for i, x in enumerate(action_data):
+        if x==0 or x ==2 :
+            new_list.append(x)
             new_obs.append(obs_data[i])
-            new_act.append(n)
+        
+    return new_obs, new_list
 
-    #validation
-    for x in new_act:
-        if (x ==3 or x == 4):
-            print (x)
-            break
-    
+def two_label(input, output):
+    new_act = []
+    new_obs = []
+
+    for i,x in enumerate(output):
+        if x == 0 or x == 1 or x==2: 
+            new_act.append(x)
+            new_obs.append(input[i])
     return new_obs, new_act
 
 def remove_presence(obs_data): #remove noise features 
@@ -333,6 +312,34 @@ def remove_presence(obs_data): #remove noise features
         new = new[:, :-2]
         new_list.append(new)
     return new_list
+
+def remove_test_zeros(test):
+    for x in test:
+        if(x[2][0] == 0 and x[1][0] == 0): #both are 0 
+            x[1][0] = 1
+            x[2][0] = 2
+            x[1][1] = -200
+            x[1][2] = -200
+            x[2][1] = -200
+            x[2][2] = -200
+    
+        elif(x[1][0] == 0): #emg 
+            x[1][0] = 1
+            x[1][1] = -200
+            x[1][2] = -200
+
+        elif(x[2][0] == 0): #traffic  
+            x[2][0] = 2
+            x[2][1] = -200
+            x[2][2] = -200
+
+    check = False
+    for x in obs_data:
+        if(x[1][0] == 0 or x[2][0] == 0):
+            check = True
+    assert check ==False, ("Zero's still exist in the input training dataset")
+   
+    return test
 
 
 def change_zeros(obs_data):
@@ -354,60 +361,24 @@ def change_zeros(obs_data):
             x[2][0] = 2
             x[2][1] = -200
             x[2][2] = -200
-    #validation
+
     check = False
     for x in obs_data:
         if(x[1][0] == 0 or x[2][0] == 0):
-            print(x)
             check = True
     assert check ==False, ("Zero's still exist in the input training dataset")
 
-def k_validation(obs, act):
-    skf = StratifiedKFold(n_splits=3, random_state=None, shuffle=True)
-    skf.get_n_splits(obs,act)
+def two_class(obs, act):
+    new_act = []
+    new_obs = []
+    for i, x in enumerate(act): 
+        if(x == 0 or x == 2):
+            new_act.append(x)
+            new_obs.append(obs[i])
+    return new_obs, new_act
 
-  
-    num_trees = [1,5,10,50,100,150,200,250]
-    max_depth = [1,2,3,4,5]
-    
-    a = 0
-    estimators = 0
-    d = 0
-    for p in num_trees: 
-        print("N_ESTIMATORS: ", p)
-        for md in max_depth:
-            print("DEPTH: ", md)
-            avg= 0
-            for i, (train_index, test_index) in enumerate(skf.split(obs,act)): # go through each fold in kfold split
-                print("---------------------------------------------------------------------------")
-                print(f"Fold {i}:")
-                print("Total datapoints:",len(obs),"|| # of training data:", len(train_index), "|| # of test data:", len(test_index))
-                train_data, train_action = [], []
-                test_data =[]
-                for x in train_index:
-                    train_data.append(obs_data[x])
-                    train_action.append(act[x])
 
-                test_data = []
-                test_action = []
-                for x in test_index: 
-                    test_data.append(obs[x])
-                    test_action.append(act[x])
-                
-                train_data = np.array(train_data)
-                train_action = np.array(train_action)
 
-                model = trainer(x, md, train_data, train_action)
-                #important_features(model)
-                c=20
-                r = accuracy_check(model, test_data, test_action,c)
-                avg+=float(r)
-                if(float(r)> float(a)):
-                    estimators = p
-                    d = md
-                    a = r
-            print((avg)/3,"% average accuracy on this split")
-    return a,  estimators ,d
 
 if __name__ == '__main__':
     start_time = time.time()
@@ -419,38 +390,55 @@ if __name__ == '__main__':
 
     cwd = '../training_data/improvement/'
     obs_data, action_data,c = load_files(cwd)
-    
-    cwd = '../training_data/improvement2/'
-    obs_data, action_data,c = load_files(cwd)
-
+    print(obs_data[-1])
     obs_data = reorder(obs_data) #standardize the order ([ego vehicle] [traffic] [emg])
     obs_data =  remove_presence(obs_data) # remove presence and other noise features
+    change_zeros(obs_data)  #remove any 0 values for emg and traffic vehicle to -200
    
-    assert((obs_data[-1][0].shape[0]) == 3)
-    change_zeros(obs_data)  #remove any 0 values for emg and traffic vehicle 
-    assert (len(obs_data) == len(action_data)), "Length of input label does not match length of output label"
+   
+    test = '../training_data/improvement2/'
+    test_obs, test_act,d = open_test_files(test)
     
-        
-    training_stats(action_data)
-    emg_presence(obs_data) # # of times emg is present
-    #action_data = binary_con(action_data) # move all action values (0,2,3,4 = 0)
-    obs_data, action_data = three_class(obs_data, action_data)
-    obs_data, action_data = clean_model_input(obs_data, action_data)
-    training_stats(action_data)
-    print("Total input datapoints " + str(len(obs_data)) + " || total output label datapoints " + str(len(action_data)) + " || # of files " +str(c))
+    test_obs = reorder(test_obs)
+    test_obs = remove_presence(test_obs)    
+    test_obs = remove_test_zeros(test_obs) 
+    test_obs = clean_test_obs(test_obs)
+    test_obs, test_act = two_label(test_obs, test_act)
 
-    #model = trainer(n, m,obs_data, action_data)  #train model based on obs and action val data
-    #important_features(model) #extract and print important features of model 
-    best = []
-    a, estimator, md = k_validation(obs_data, action_data)          
-    print(a,"% accuracy","n_estimator: ",estimator,"DEPTH: ",md)  
-    print(len(obs_data))
+
+    print("Total input datapoints " + str(len(obs_data)) + " || total output label datapoints " + str(len(action_data)) + " || # of training files + test files " +str(c) + "| " + str(d))
+    emg_presence(obs_data)
+    obs_data, action_data = two_label(obs_data, action_data)
+    training_stats(action_data)
+
+
+    obs_data, action_data = clean_model_input(obs_data, action_data)
+  
     
-    #obs_final, act,c = open_test_files()  
-    # obs_final = obs_data
-    # act = action_data
-    # c=20   
-           
+    print("testing training stats: ", end=' ')
+    training_stats(test_act)
+
+
+    binary_obs, binary_action = binary_con(obs_data, action_data)#train on a binary situation 
+    binary_obs = np.array(binary_obs)
+    binary_action = np.array(binary_action)
+
+    binary_model = trainer(250,5, binary_obs, binary_action) 
+    print("Binary Model Features: ")
+    important_features(binary_model)
+
+
+    two_class_obs, two_class_act = two_class(obs_data,action_data)
+    two_class_obs = np.array(two_class_obs)
+    two_class_act = np.array(two_class_act)
+
+    lane_model = trainer(150,2, two_class_obs, two_class_act)
+    print("Lane Yield Model Features")
+    important_features(lane_model)
+
+  
+    final_accuracy(binary_model, lane_model, test_obs, test_act)
+
 
     elapsed_time = time.time() - start_time 
     elapsed_time2 = elapsed_time/60

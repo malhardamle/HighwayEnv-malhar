@@ -17,11 +17,11 @@ def emg_presence(obs):
     c = 0
     t = len(obs)
     for x in obs:    
-        if (x[2][0] == 2): 
+        if (x[1][1] != -200 and x[1][2] != -200): 
             c+=1
     v = (c/t)*100
     v = "{:.2f}".format(v)
-    print(f"EMG is in {c} frames! {v} %")
+    print(f"Emergency vehicle is in {c} frames! {v} %")
 
 
 
@@ -46,7 +46,7 @@ c = 0
 counters = [0, 0, 0, 0, 0]
 def load_files(file_path):
     global c
-    max = 107
+    max = 102
     for x in os.listdir(file_path):
         if x.endswith(".npy"):
             c+=1
@@ -69,7 +69,7 @@ def load_files(file_path):
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
                 elif (d['man_act'] == 3):
-                    if(counters[3] <= 105):
+                    if(counters[3] <= max):
                         counters[3] +=1
                         obs_data.append(obs)
                         action_data.append((d['man_act']))
@@ -442,8 +442,7 @@ def change_zeros(obs_data):
     for x in obs_data:
         if(x[1][0] == 0 or x[2][0] == 0):
             check = True
-    assert check ==False
-    print("Zero's still exist in the input training dataset")
+    assert check ==False, ("Zero's still exist in the input training dataset")
 
 def two_class(obs, act):
     new_act = []
@@ -552,7 +551,7 @@ if __name__ == '__main__':
     change_zeros(obs_data)  #remove any 0 values for emg and traffic vehicle to -200
    
    
-  
+    print (obs_data[-1])
         
     print("Total input datapoints " + str(len(obs_data)) + " || total output label datapoints " + str(len(action_data)) + " || # of files " +str(c))
     training_stats(action_data)
@@ -560,28 +559,28 @@ if __name__ == '__main__':
     #action_data = binary_con(action_data) # move all action values (0,2,3,4 = 0)
     obs_data, action_data = two_label(obs_data, action_data)
     #obs_data, action_data = remove_idle(obs_data, action_data)
-    training_stats(action_data)
+    #training_stats(action_data)
     obs_data, action_data = clean_model_input(obs_data, action_data)
     
   
     
-    #model = trainer(n, m,obs_data, action_data)  #train model based on obs and action val data
-    #important_features(model) #extract and print important features of model 
+    # #model = trainer(n, m,obs_data, action_data)  #train model based on obs and action val data
+    # #important_features(model) #extract and print important features of model 
     
-    best = []
-    a, estimator, md,a2,e2,d2, f_score, f_score2, a3, e3, d3, f_3 = k_validation(obs_data, action_data)   
-    print(a,"% accuracy","n_estimator: ",estimator,"DEPTH: ",md)  
-    print(a2,"% accuracy","n_estimator: ",e2,"DEPTH: ",d2)  
-    print(a3,"% Nested accuracy","n_estimator: ",e3,"DEPTH: ",d3)  
-    print(len(obs_data))
-    final = (float(a) + float(a2)) / 2
-    print("Final accuracy", final)
-    f_avg = sum([f_score, f_score2]) / 2
-    print("F1_Score", f_score, f_score2,f_avg, f_3)
-    #obs_final, act,c = open_test_files()  
-    # obs_final = obs_data
-    # act = action_data
-    # c=20   
+    # best = []
+    # a, estimator, md,a2,e2,d2, f_score, f_score2, a3, e3, d3, f_3 = k_validation(obs_data, action_data)   
+    # print(a,"% accuracy","n_estimator: ",estimator,"DEPTH: ",md)  
+    # print(a2,"% accuracy","n_estimator: ",e2,"DEPTH: ",d2)  
+    # print(a3,"% Nested accuracy","n_estimator: ",e3,"DEPTH: ",d3)  
+    # print(len(obs_data))
+    # final = (float(a) + float(a2)) / 2
+    # print("Final accuracy", final)
+    # f_avg = sum([f_score, f_score2]) / 2
+    # print("F1_Score", f_score, f_score2,f_avg, f_3)
+    # #obs_final, act,c = open_test_files()  
+    # # obs_final = obs_data
+    # # act = action_data
+    # # c=20   
            
 
     elapsed_time = time.time() - start_time 
