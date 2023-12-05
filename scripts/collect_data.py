@@ -52,7 +52,7 @@ while not(done or stop_prog): # loop to keep main program running
     data.append({'reward': reward, 'obs': obs, 'info': info, 'done':done})
     obs,val = env.render()
     if val !=1: print(val)
-    #if val != 1: print("Collect val:", val)
+    if val != 1: print("Manual Keyboard val:", val)
     obs, reward, done, truncated, info, = env.step(dummy_action)
     data[-1].update({'man_act': val}) #ADD action value to data dict
     

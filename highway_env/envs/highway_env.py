@@ -69,7 +69,7 @@ class HighwayEnv(AbstractEnv):
         #random traffic vehicle
         rand_vehicle = Vehicle.create_random(
                 self.road,
-                speed=32,
+                speed=23,
                 lane_id=self.config["initial_lane_id"],
                 spacing=self.config["ego_spacing"]
             )
@@ -81,7 +81,7 @@ class HighwayEnv(AbstractEnv):
         #emg vehicle
         emg_vehicle = Vehicle.create_random(
                 self.road,
-                speed=28,
+                speed=23,
                 lane_id=self.config["initial_lane_id"],
                 spacing=self.config["ego_spacing"]
               
@@ -99,7 +99,7 @@ class HighwayEnv(AbstractEnv):
         for others in other_per_controlled:
             vehicle = Vehicle.create_random(
                 self.road,
-                speed=25,
+                speed=16,
                 lane_id=self.config["initial_lane_id"],
                 spacing=self.config["ego_spacing"]
             )

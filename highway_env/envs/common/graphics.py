@@ -172,17 +172,18 @@ class EnvViewer(object):
         pygame.quit()
 
 def check(event):
+    val = 1
     if event.key == pygame.K_RIGHT:
-        print("check 3")
+        #print("check 3")
         val = 3
     elif event.key == pygame.K_UP:
-        print("CHECK 0")
+        #print("CHECK 0")
         val = 0
     elif event.key == pygame.K_DOWN:
-        print("CHECK 2")
+        #print("CHECK 2")
         val = 2
     elif event.key == pygame.K_LEFT:
-        print("CHECK 4")
+        #print("CHECK 4")
         val = 4
     return val
   

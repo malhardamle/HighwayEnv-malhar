@@ -317,7 +317,7 @@ class AbstractEnv(gym.Env):
         #     #keystroke.append(act_val)
         # elif act_val == None:
         #     #keystroke.append(1)
-        if act_val != None: print ("Render ():", act_val)
+      # if act_val != None: print ("Render ():", act_val)
         if act_val == None: act_val = 1
         if check: return image, act_val
         else: image = np.empty((2, 2))
